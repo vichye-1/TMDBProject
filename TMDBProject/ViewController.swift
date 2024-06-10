@@ -14,13 +14,15 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        //callRequestMovie()
+        callRequestMovie()
         callRequestCredit()
     }
     
     private func configureView() {
         print(#function)
-        view.backgroundColor = .gray
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.triangle"), style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
+        view.backgroundColor = .white
     }
     
     private func callRequestMovie() {
