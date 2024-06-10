@@ -10,9 +10,14 @@
 		EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32C2C16D571009E66BD /* AppDelegate.swift */; };
 		EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32E2C16D571009E66BD /* SceneDelegate.swift */; };
 		EF79C3312C16D571009E66BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3302C16D571009E66BD /* ViewController.swift */; };
-		EF79C3342C16D571009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3332C16D571009E66BD /* Base */; };
 		EF79C3362C16D573009E66BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3352C16D573009E66BD /* Assets.xcassets */; };
 		EF79C3392C16D573009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3382C16D573009E66BD /* Base */; };
+		EF79C3412C16DA2B009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3402C16DA2B009E66BD /* .gitignore */; };
+		EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3422C16E86D009E66BD /* APIKey.swift */; };
+		EF79C3452C16F017009E66BD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3442C16F017009E66BD /* Movie.swift */; };
+		EF79C3472C16F758009E66BD /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3462C16F758009E66BD /* Credit.swift */; };
+		EF79C34A2C16F945009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C3492C16F945009E66BD /* Alamofire */; };
+		EF79C34D2C16F94F009E66BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C34C2C16F94F009E66BD /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +25,13 @@
 		EF79C32C2C16D571009E66BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF79C32E2C16D571009E66BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF79C3302C16D571009E66BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF79C3332C16D571009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF79C3352C16D573009E66BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF79C3382C16D573009E66BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF79C33A2C16D573009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF79C3402C16DA2B009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EF79C3422C16E86D009E66BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EF79C3442C16F017009E66BD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EF79C3462C16F758009E66BD /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF79C34A2C16F945009E66BD /* Alamofire in Frameworks */,
+				EF79C34D2C16F94F009E66BD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,7 @@
 		EF79C3202C16D571009E66BD = {
 			isa = PBXGroup;
 			children = (
+				EF79C3402C16DA2B009E66BD /* .gitignore */,
 				EF79C32B2C16D571009E66BD /* TMDBProject */,
 				EF79C32A2C16D571009E66BD /* Products */,
 			);
@@ -56,15 +67,25 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF79C34E2C16FBD6009E66BD /* Model */,
 				EF79C32C2C16D571009E66BD /* AppDelegate.swift */,
 				EF79C32E2C16D571009E66BD /* SceneDelegate.swift */,
 				EF79C3302C16D571009E66BD /* ViewController.swift */,
-				EF79C3322C16D571009E66BD /* Main.storyboard */,
 				EF79C3352C16D573009E66BD /* Assets.xcassets */,
 				EF79C3372C16D573009E66BD /* LaunchScreen.storyboard */,
 				EF79C33A2C16D573009E66BD /* Info.plist */,
+				EF79C3422C16E86D009E66BD /* APIKey.swift */,
 			);
 			path = TMDBProject;
+			sourceTree = "<group>";
+		};
+		EF79C34E2C16FBD6009E66BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF79C3442C16F017009E66BD /* Movie.swift */,
+				EF79C3462C16F758009E66BD /* Credit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +104,10 @@
 			dependencies = (
 			);
 			name = TMDBProject;
+			packageProductDependencies = (
+				EF79C3492C16F945009E66BD /* Alamofire */,
+				EF79C34C2C16F94F009E66BD /* SnapKit */,
+			);
 			productName = TMDBProject;
 			productReference = EF79C3292C16D571009E66BD /* TMDBProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +136,10 @@
 				Base,
 			);
 			mainGroup = EF79C3202C16D571009E66BD;
+			packageReferences = (
+				EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EF79C32A2C16D571009E66BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF79C3362C16D573009E66BD /* Assets.xcassets in Resources */,
+				EF79C3412C16DA2B009E66BD /* .gitignore in Resources */,
 				EF79C3392C16D573009E66BD /* Base in Resources */,
-				EF79C3342C16D571009E66BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +167,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
 				EF79C3312C16D571009E66BD /* ViewController.swift in Sources */,
 				EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */,
+				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
+				EF79C3452C16F017009E66BD /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF79C3322C16D571009E66BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF79C3332C16D571009E66BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EF79C3372C16D573009E66BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,9 +320,9 @@
 				INFOPLIST_FILE = TMDBProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +330,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghye.TMDBProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,9 +351,9 @@
 				INFOPLIST_FILE = TMDBProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +361,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghye.TMDBProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +393,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF79C3492C16F945009E66BD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		EF79C34C2C16F94F009E66BD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF79C3212C16D571009E66BD /* Project object */;
 }
