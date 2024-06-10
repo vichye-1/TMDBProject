@@ -23,7 +23,7 @@ class TrendTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "#Mystery"
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 17, weight: .black)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black
         return label
     }()
@@ -86,6 +86,12 @@ class TrendTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let dividerLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .darkGray
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
@@ -101,6 +107,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(rateNumLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(actorsLabel)
+        contentView.addSubview(dividerLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -154,6 +161,14 @@ class TrendTableViewCell: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom)
             make.height.equalTo(28)
         }
+        
+        dividerLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(movieView).inset(20)
+            make.top.equalTo(actorsLabel.snp.bottom).offset(20)
+            make.height.equalTo(1)
+        }
+        
+        
     }
     
     required init?(coder: NSCoder) {
