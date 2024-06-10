@@ -9,13 +9,28 @@ import UIKit
 import Alamofire
 import SnapKit
 
-final class ViewController: UIViewController {
+final class TrendViewController: UIViewController {
+    
+    let movieTableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureHierarchy()
+        configureLayout()
         configureView()
         callRequestMovie()
         callRequestCredit()
+        configureTableView()
+    }
+    
+    private func configureHierarchy() {
+        view.addSubview(movieTableView)
+    }
+    
+    private func configureLayout() {
+        movieTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func configureView() {
@@ -81,8 +96,27 @@ final class ViewController: UIViewController {
         }
     }
     
-    
-
-
+    private func configureTableView() {
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
+        
+        let identifier = TrendTableViewCell.identifier
+        movieTableView.register(TrendTableViewCell.self, forCellReuseIdentifier: identifier)
+        
+        movieTableView.rowHeight = 200
+    }
 }
 
+extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = TrendTableViewCell.identifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
+        return cell
+    }
+    
+    
+}
