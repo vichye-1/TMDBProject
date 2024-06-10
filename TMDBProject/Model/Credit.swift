@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Credit {
+struct Credit: Decodable {
     let id: Int
-    let cast: [castList]
+    let cast: [Cast]
 }
 
-struct castList {
+struct Cast: Decodable {
     let name: String
-    let profile_path: String
+    let profile_path: String?
 }

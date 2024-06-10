@@ -14,7 +14,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        callRequestMovie()
+        //callRequestMovie()
         callRequestCredit()
     }
     
@@ -33,10 +33,15 @@ final class ViewController: UIViewController {
             "accept": "application/json",
             "Authorization": APIKey.tmdbAccessToken
         ]
-        AF.request(url, method: .get, parameters: parameters, headers: header).responseString { response in
+        AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Movie.self)
+        { response in
             switch response.result {
             case .success(let value):
-                print(value)
+                var idList: [Int] = []
+                for i in 0..<value.results.count {
+                    idList.append(value.results[i].id)
+                }
+                print(idList)
             case .failure(let error):
                 print("movie: \(error)")
             }
@@ -53,15 +58,25 @@ final class ViewController: UIViewController {
             "accept": "application/json",
             "Authorization": APIKey.tmdbAccessToken
         ]
-        AF.request(url, method: .get, parameters: parameters, headers: header).responseString { response in  // request하면 response해야함
+        
+//        AF.request(url).responseString { response in  // request하면 response해야함
+//            switch response.result {
+//            case .success(let value):
+//                print(value)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        
+        
+        AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Credit.self) { response in
             switch response.result {
             case .success(let value):
-                print("Credit Success")
+                print(value.cast)
             case .failure(let error):
-                print("error: \(error)")
+                print(error)
             }
         }
-        
     }
     
     
