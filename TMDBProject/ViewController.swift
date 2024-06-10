@@ -25,24 +25,40 @@ final class ViewController: UIViewController {
     
     private func callRequestMovie() {
         print(#function)
-    }
-    
-    private func callRequestCredit() {
-        print(#function)
-        let url = APIUrl.tmdbMovieCredit(id: 940721).urlString
-        let parametes: Parameters = [
+        let url = APIUrl.tmdbmovie.urlString
+        let parameters: Parameters = [
             "language": "ko-KR"
         ]
         let header: HTTPHeaders = [
             "accept": "application/json",
             "Authorization": APIKey.tmdbAccessToken
         ]
-        AF.request(url, method: .get, parameters: parametes, headers: header).responseString { response in  // request하면 response해야함
+        AF.request(url, method: .get, parameters: parameters, headers: header).responseString { response in
             switch response.result {
             case .success(let value):
                 print(value)
             case .failure(let error):
-                print(error)
+                print("movie: \(error)")
+            }
+        }
+    }
+    
+    private func callRequestCredit() {
+        print(#function)
+        let url = APIUrl.tmdbMovieCredit(id: 940721).urlString
+        let parameters: Parameters = [
+            "language": "ko-KR"
+        ]
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": APIKey.tmdbAccessToken
+        ]
+        AF.request(url, method: .get, parameters: parameters, headers: header).responseString { response in  // request하면 response해야함
+            switch response.result {
+            case .success(let value):
+                print("Credit Success")
+            case .failure(let error):
+                print("error: \(error)")
             }
         }
         
