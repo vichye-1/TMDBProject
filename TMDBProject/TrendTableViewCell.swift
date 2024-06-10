@@ -12,7 +12,7 @@ class TrendTableViewCell: UITableViewCell {
 
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .red
+        label.text = "12/10/2020"
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 15)
         label.textColor = .darkGray
@@ -21,22 +21,42 @@ class TrendTableViewCell: UITableViewCell {
     
     private let genreLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .orange
+        label.text = "#Mystery"
         label.textAlignment = .left
-        label.font = .boldSystemFont(ofSize: 17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .black)
         label.textColor = .black
         return label
     }()
     
     private let movieView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .orange
+        view.layer.cornerRadius = 9
+        
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 4
         return view
     }()
     
     private let posterImage: UIImageView = {
         let image = UIImageView()
+        image.backgroundColor = .systemYellow
+        image.layer.cornerRadius = 9
+        image.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         return image
+    }()
+    
+    private let rateStrLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .systemPurple
+        label.text = "평점"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 15)
+        label.textAlignment = .center
+        
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,6 +67,10 @@ class TrendTableViewCell: UITableViewCell {
     
     private func configureTableViewCellHierarchy() {
         contentView.addSubview(dateLabel)
+        contentView.addSubview(genreLabel)
+        contentView.addSubview(movieView)
+        contentView.addSubview(posterImage)
+        contentView.addSubview(rateStrLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -54,6 +78,31 @@ class TrendTableViewCell: UITableViewCell {
             make.top.equalTo(contentView.safeAreaLayoutGuide).offset(20)
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
             make.width.equalTo(80)
+            make.height.equalTo(20)
+        }
+        
+        genreLabel.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
+            make.width.equalTo(90)
+            make.height.equalTo(28)
+        }
+        
+        movieView.snp.makeConstraints { make in
+            make.top.equalTo(genreLabel.snp.bottom).offset(8)
+            make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(16)
+            make.height.equalTo(movieView.snp.width)
+        }
+        
+        posterImage.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(movieView)
+            make.height.equalTo(movieView.snp.height).multipliedBy(0.7)
+        }
+        
+        rateStrLabel.snp.makeConstraints { make in
+            make.leading.equalTo(posterImage.snp.leading).offset(20)
+            make.bottom.equalTo(posterImage.snp.bottom).inset(20)
+            make.width.equalTo(40)
             make.height.equalTo(24)
         }
     }

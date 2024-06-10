@@ -103,7 +103,7 @@ final class TrendViewController: UIViewController {
         let identifier = TrendTableViewCell.identifier
         movieTableView.register(TrendTableViewCell.self, forCellReuseIdentifier: identifier)
         
-        movieTableView.rowHeight = 200
+        movieTableView.rowHeight = 450
     }
 }
 
