@@ -77,6 +77,15 @@ class TrendTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let actorsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "leejungjae,parekhaesoo, jung ho-yeon, wi ha-joon"
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 15)
+        label.textColor = .darkGray
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
@@ -91,6 +100,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(rateStrLabel)
         contentView.addSubview(rateNumLabel)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(actorsLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -116,7 +126,7 @@ class TrendTableViewCell: UITableViewCell {
         
         posterImage.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(movieView)
-            make.height.equalTo(movieView.snp.height).multipliedBy(0.7)
+            make.height.equalTo(movieView.snp.height).multipliedBy(0.6)
         }
         
         rateStrLabel.snp.makeConstraints { make in
@@ -136,7 +146,13 @@ class TrendTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(movieView).inset(20)
             make.top.equalTo(posterImage.snp.bottom).offset(16)
-            make.height.equalTo(34)
+            make.height.equalTo(30)
+        }
+        
+        actorsLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(movieView).inset(20)
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.height.equalTo(28)
         }
     }
     
