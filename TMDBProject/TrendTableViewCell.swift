@@ -55,7 +55,16 @@ class TrendTableViewCell: UITableViewCell {
         label.textColor = .white
         label.font = .systemFont(ofSize: 15)
         label.textAlignment = .center
-        
+        return label
+    }()
+    
+    private let rateNumLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .white
+        label.text = "3.3"
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15)
+        label.textAlignment = .center
         return label
     }()
     
@@ -71,6 +80,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(movieView)
         contentView.addSubview(posterImage)
         contentView.addSubview(rateStrLabel)
+        contentView.addSubview(rateNumLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -101,6 +111,13 @@ class TrendTableViewCell: UITableViewCell {
         
         rateStrLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImage.snp.leading).offset(20)
+            make.bottom.equalTo(posterImage.snp.bottom).inset(20)
+            make.width.equalTo(40)
+            make.height.equalTo(24)
+        }
+        
+        rateNumLabel.snp.makeConstraints { make in
+            make.leading.equalTo(rateStrLabel.snp.trailing)
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
             make.width.equalTo(40)
             make.height.equalTo(24)
