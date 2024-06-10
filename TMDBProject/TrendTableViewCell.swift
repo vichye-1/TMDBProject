@@ -30,7 +30,7 @@ class TrendTableViewCell: UITableViewCell {
     
     private let movieView: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        view.backgroundColor = .white
         view.layer.cornerRadius = 9
         
         view.layer.shadowColor = UIColor.black.cgColor
@@ -68,6 +68,15 @@ class TrendTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Alice in borderland"
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textAlignment = .left
+        label.textColor = .black
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
@@ -81,6 +90,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(posterImage)
         contentView.addSubview(rateStrLabel)
         contentView.addSubview(rateNumLabel)
+        contentView.addSubview(titleLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -121,6 +131,12 @@ class TrendTableViewCell: UITableViewCell {
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
             make.width.equalTo(40)
             make.height.equalTo(24)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(movieView).inset(20)
+            make.top.equalTo(posterImage.snp.bottom).offset(16)
+            make.height.equalTo(34)
         }
     }
     
