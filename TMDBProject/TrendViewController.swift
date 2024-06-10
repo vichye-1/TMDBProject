@@ -12,6 +12,8 @@ import SnapKit
 final class TrendViewController: UIViewController {
     
     let movieTableView = UITableView()
+    var movies: [MovieResult] = []
+    var casts: [Int: [Cast]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,6 @@ final class TrendViewController: UIViewController {
         configureLayout()
         configureView()
         callRequestMovie()
-        callRequestCredit()
         configureTableView()
     }
     
@@ -54,18 +55,15 @@ final class TrendViewController: UIViewController {
         { response in
             switch response.result {
             case .success(let value):
-                var idList: [Int] = []
-                for i in 0..<value.results.count {
-                    idList.append(value.results[i].id)
-                }
-                print(idList)
+                self.movies = value.results
+                self.movieTableView.reloadData()
             case .failure(let error):
-                print("movie: \(error)")
+                print("movie \(error)")
             }
         }
     }
     
-    private func callRequestCredit() {
+    private func callRequestCredit(_ movieId: Int) {
         print(#function)
         let url = APIUrl.tmdbMovieCredit(id: 940721).urlString
         let parameters: Parameters = [
@@ -76,20 +74,11 @@ final class TrendViewController: UIViewController {
             "Authorization": APIKey.tmdbAccessToken
         ]
         
-//        AF.request(url).responseString { response in  // request하면 response해야함
-//            switch response.result {
-//            case .success(let value):
-//                print(value)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        
         AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Credit.self) { response in
             switch response.result {
             case .success(let value):
-                print(value.cast)
+                self.casts[movieId] = value.cast
+                self.movieTableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -109,14 +98,15 @@ final class TrendViewController: UIViewController {
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = TrendTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
+        let movie = movies[indexPath.row]
+        let cast = casts[movie.id] ?? []
+        cell.configure(movie, cast)
         return cell
     }
-    
-    
 }

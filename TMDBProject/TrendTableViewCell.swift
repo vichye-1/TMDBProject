@@ -7,12 +7,12 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class TrendTableViewCell: UITableViewCell {
 
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "12/10/2020"
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 15)
         label.textColor = .darkGray
@@ -53,7 +53,7 @@ class TrendTableViewCell: UITableViewCell {
         label.backgroundColor = .systemPurple
         label.text = "평점"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 13)
         label.textAlignment = .center
         return label
     }()
@@ -63,7 +63,7 @@ class TrendTableViewCell: UITableViewCell {
         label.backgroundColor = .white
         label.text = "3.3"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 13)
         label.textAlignment = .center
         return label
     }()
@@ -113,14 +113,14 @@ class TrendTableViewCell: UITableViewCell {
     private func configureTableViewCellLayOut() {
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView.safeAreaLayoutGuide).offset(20)
-            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
+            make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.width.equalTo(80)
             make.height.equalTo(20)
         }
         
         genreLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom)
-            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
+            make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.width.equalTo(90)
             make.height.equalTo(28)
         }
@@ -139,14 +139,14 @@ class TrendTableViewCell: UITableViewCell {
         rateStrLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImage.snp.leading).offset(20)
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
-            make.width.equalTo(40)
+            make.width.equalTo(36)
             make.height.equalTo(24)
         }
         
         rateNumLabel.snp.makeConstraints { make in
             make.leading.equalTo(rateStrLabel.snp.trailing)
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
-            make.width.equalTo(40)
+            make.width.equalTo(36)
             make.height.equalTo(24)
         }
         
@@ -167,8 +167,17 @@ class TrendTableViewCell: UITableViewCell {
             make.top.equalTo(actorsLabel.snp.bottom).offset(20)
             make.height.equalTo(1)
         }
-        
-        
+    }
+    
+    func configure(_ movie: MovieResult, _ casts: [Cast]) {
+        dateLabel.text = movie.release_date
+        titleLabel.text = movie.title
+        rateNumLabel.text = String(format: "%.1f", movie.vote_average)
+        actorsLabel.text = casts.map { $0.name }.joined(separator: ", ")
+        // how to build an image URL : https://developer.themoviedb.org/docs/image-basics
+//        if let posterPath = movie.poster_path {
+//            let posterURL = "https://image.tmdb.org/t/p/w500\(posterPath)"
+//        }
     }
     
     required init?(coder: NSCoder) {

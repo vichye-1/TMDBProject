@@ -22,6 +22,7 @@
 		EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3512C1714E8009E66BD /* ReuseIdentifierProtocol.swift */; };
 		EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3542C1716E2009E66BD /* UIViewController+.swift */; };
 		EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3562C1716F3009E66BD /* UITableViewCell+.swift */; };
+		EF79C35A2C176BF4009E66BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C3592C176BF4009E66BD /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF79C35A2C176BF4009E66BD /* Kingfisher in Frameworks */,
 				EF79C34A2C16F945009E66BD /* Alamofire in Frameworks */,
 				EF79C34D2C16F94F009E66BD /* SnapKit in Frameworks */,
 			);
@@ -127,6 +129,7 @@
 			packageProductDependencies = (
 				EF79C3492C16F945009E66BD /* Alamofire */,
 				EF79C34C2C16F94F009E66BD /* SnapKit */,
+				EF79C3592C176BF4009E66BD /* Kingfisher */,
 			);
 			productName = TMDBProject;
 			productReference = EF79C3292C16D571009E66BD /* TMDBProject.app */;
@@ -159,6 +162,7 @@
 			packageReferences = (
 				EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EF79C32A2C16D571009E66BD /* Products */;
 			projectDirPath = "";
@@ -435,6 +439,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -447,6 +459,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EF79C3592C176BF4009E66BD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
