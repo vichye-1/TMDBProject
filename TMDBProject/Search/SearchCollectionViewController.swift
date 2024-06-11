@@ -93,7 +93,11 @@ final class SearchCollectionViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Search.self) { response in
             switch response.result {
             case .success(let value):
-                self.searchList.results.append(contentsOf: value.results)
+                if self.page == 1 {
+                    self.searchList = value
+                } else {
+                    self.searchList.results.append(contentsOf: value.results)
+                }
                 self.searchCollectionView.reloadData()
             case .failure(let error):
                 print(error)
@@ -105,7 +109,17 @@ final class SearchCollectionViewController: UIViewController {
 extension SearchCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         page = 1
-        callRequestSearch(query: searchBar.text!)
+        guard let keyWord = movieSearchBar.text, !keyWord.isEmpty else {
+            return errorAlert()
+        }
+        callRequestSearch(query: keyWord)
+    }
+    
+    func errorAlert() {
+        let alert = UIAlertController(title: "Error!", message: "검색하고 싶은 영화 이름을 입력해주세요!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
