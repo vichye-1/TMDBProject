@@ -42,9 +42,11 @@ class TrendTableViewCell: UITableViewCell {
     
     private let posterImage: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .systemYellow
+        image.backgroundColor = .white
         image.layer.cornerRadius = 9
         image.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
         return image
     }()
     
@@ -79,7 +81,6 @@ class TrendTableViewCell: UITableViewCell {
     
     private let actorsLabel: UILabel = {
         let label = UILabel()
-        label.text = "leejungjae,parekhaesoo, jung ho-yeon, wi ha-joon"
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 15)
         label.textColor = .darkGray
@@ -175,9 +176,12 @@ class TrendTableViewCell: UITableViewCell {
         rateNumLabel.text = String(format: "%.1f", movie.vote_average)
         actorsLabel.text = casts.map { $0.name }.joined(separator: ", ")
         // how to build an image URL : https://developer.themoviedb.org/docs/image-basics
-//        if let posterPath = movie.poster_path {
-//            let posterURL = "https://image.tmdb.org/t/p/w500\(posterPath)"
-//        }
+        guard let posterPath = movie.poster_path else {
+            posterImage.image = UIImage(systemName: "timer")
+            return
+        }
+        let posterURL = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
+        posterImage.kf.setImage(with: posterURL)
     }
     
     required init?(coder: NSCoder) {
