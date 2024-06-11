@@ -43,7 +43,6 @@ final class TrendViewController: UIViewController {
     }
     
     private func callRequestMovie() {
-        print(#function)
         let url = APIUrl.tmdbmovie.urlString
         let parameters: Parameters = [
             "language": "ko-KR"
@@ -65,7 +64,6 @@ final class TrendViewController: UIViewController {
     }
     
     private func callRequestCredit(_ movieId: Int) {
-        print(#function)
         let url = APIUrl.tmdbMovieCredit(id: 940721).urlString
         let parameters: Parameters = [
             "language": "ko-KR"

@@ -47,6 +47,8 @@ final class SearchCollectionViewController: UIViewController {
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
         searchCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
+        
+        searchCollectionView.prefetchDataSource = self
     }
     
     private func configureHierarchy() {
@@ -118,4 +120,15 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
         cell.configureCollectionViewCell(searchData)
         return cell
     }
+}
+
+extension SearchCollectionViewController: UICollectionViewDataSourcePrefetching{
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        print("Prefetch \(indexPaths)")
+    }
+    
+    
+    
+    
+    
 }
