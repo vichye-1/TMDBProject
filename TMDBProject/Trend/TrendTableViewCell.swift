@@ -201,7 +201,7 @@ class TrendTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(_ movie: MovieResult, _ casts: [Cast]) {
+    func configureCell(_ movie: MovieResult, _ casts: [Cast]) {
         dateLabel.text = movie.release_date
         titleLabel.text = movie.title
         rateNumLabel.text = String(format: "%.1f", movie.vote_average)

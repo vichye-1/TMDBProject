@@ -108,7 +108,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
         let movie = movies[indexPath.row]
         let cast = casts[movie.id] ?? []
-        cell.configure(movie, cast)
+        cell.configureCell(movie, cast)
         return cell
     }
 }
