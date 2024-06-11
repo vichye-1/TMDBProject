@@ -21,6 +21,7 @@ final class TrendViewController: UIViewController {
         configureLayout()
         configureView()
         callRequestMovie()
+        callRequestCredit(940721)
         configureTableView()
     }
     
