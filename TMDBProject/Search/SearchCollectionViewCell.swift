@@ -17,10 +17,9 @@ final class SearchCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        backgroundColor = .gray
         configureCollectionViewCellHierarchy()
         configureCollectionViewLayout()
-        // posterImageView.backgroundColor = .blue
     }
     
     private func configureCollectionViewCellHierarchy() {
@@ -36,6 +35,7 @@ final class SearchCollectionViewCell: UICollectionViewCell {
     func configureCollectionViewCell(_ searchResult: searchResults) {
         guard let searchPosterPath = searchResult.poster_path else {
             posterImageView.image = UIImage(systemName: "questionmark.square.dashed")
+            posterImageView.tintColor = .darkGray
             return
         }
         let searchPosterURL = URL(string: "https://image.tmdb.org/t/p/w500\(searchPosterPath)")
