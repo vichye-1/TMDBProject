@@ -21,7 +21,6 @@ final class TrendViewController: UIViewController {
         configureLayout()
         configureView()
         callRequestMovie()
-        callRequestCredit(940721)
         configureTableView()
     }
     
@@ -38,8 +37,13 @@ final class TrendViewController: UIViewController {
     private func configureView() {
         print(#function)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.triangle"), style: .plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonTapped))
         view.backgroundColor = .white
+    }
+    
+    @objc private func searchButtonTapped() {
+        let searchVC = SearchCollectionViewController()
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     private func callRequestMovie() {
