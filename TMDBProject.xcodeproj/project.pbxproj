@@ -23,8 +23,10 @@
 		EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3542C1716E2009E66BD /* UIViewController+.swift */; };
 		EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3562C1716F3009E66BD /* UITableViewCell+.swift */; };
 		EF79C35A2C176BF4009E66BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C3592C176BF4009E66BD /* Kingfisher */; };
-		EF79C3662C184A96009E66BD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3652C184A96009E66BD /* SearchViewController.swift */; };
+		EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */; };
 		EF79C3682C184CA2009E66BD /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3672C184CA2009E66BD /* Search.swift */; };
+		EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */; };
+		EF79C36C2C185CAD009E66BD /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C36B2C185CAD009E66BD /* UICollectionViewCell+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +45,10 @@
 		EF79C3512C1714E8009E66BD /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		EF79C3542C1716E2009E66BD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		EF79C3562C1716F3009E66BD /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
-		EF79C3652C184A96009E66BD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		EF79C3672C184CA2009E66BD /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		EF79C36B2C185CAD009E66BD /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				EF79C3542C1716E2009E66BD /* UIViewController+.swift */,
 				EF79C3562C1716F3009E66BD /* UITableViewCell+.swift */,
+				EF79C36B2C185CAD009E66BD /* UICollectionViewCell+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,7 +132,8 @@
 		EF79C3642C184A7D009E66BD /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				EF79C3652C184A96009E66BD /* SearchViewController.swift */,
+				EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */,
+				EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -214,14 +220,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
-				EF79C3662C184A96009E66BD /* SearchViewController.swift in Sources */,
+				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */,
 				EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */,
 				EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */,
 				EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */,
 				EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */,
 				EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */,
+				EF79C36C2C185CAD009E66BD /* UICollectionViewCell+.swift in Sources */,
 				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
+				EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */,
 				EF79C3682C184CA2009E66BD /* Search.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
 				EF79C3452C16F017009E66BD /* Movie.swift in Sources */,
