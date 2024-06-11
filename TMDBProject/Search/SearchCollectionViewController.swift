@@ -15,9 +15,11 @@ final class SearchCollectionViewController: UIViewController {
     var searchList = Search(results: [], page: 0, total_pages: 0, total_results: 0)
     
     var page = 1
+    var currentQuery: String?
     
     private let movieSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.placeholder = "검색하고 싶은 영화 이름을 적어주세요"
         return searchBar
     }()
     
@@ -39,7 +41,7 @@ final class SearchCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequestSearch(query: "factory")
+        callRequestSearch()
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -77,14 +79,16 @@ final class SearchCollectionViewController: UIViewController {
     }
     
     
-    private func callRequestSearch(query: String) {
+    private func callRequestSearch(query: String? = nil) {
         print(#function)
         let url = APIUrl.tmdbSearch.urlString
-        let parameters: Parameters = [
-            "query": "\(query)",
+        var parameters: Parameters = [
             "language": "ko-KR",
             "page": "\(page)"
         ]
+        if let query = query, !query.isEmpty {
+            parameters["query"] = query
+        }
         let header: HTTPHeaders = [
             "accept": "application/json",
             "Authorization": APIKey.tmdbAccessToken
@@ -104,6 +108,13 @@ final class SearchCollectionViewController: UIViewController {
             }
         }
     }
+    
+    func errorAlert() {
+        let alert = UIAlertController(title: "Error!", message: "검색하고 싶은 영화 이름을 입력해주세요!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension SearchCollectionViewController: UISearchBarDelegate {
@@ -112,15 +123,10 @@ extension SearchCollectionViewController: UISearchBarDelegate {
         guard let keyWord = movieSearchBar.text, !keyWord.isEmpty else {
             return errorAlert()
         }
+        currentQuery = keyWord
         callRequestSearch(query: keyWord)
     }
     
-    func errorAlert() {
-        let alert = UIAlertController(title: "Error!", message: "검색하고 싶은 영화 이름을 입력해주세요!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
 }
 
 extension SearchCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -139,12 +145,15 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
 
 extension SearchCollectionViewController: UICollectionViewDataSourcePrefetching{
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print("Prefetch \(indexPaths)")
         
         for item in indexPaths {
             if searchList.results.count - 2 == item.row {
                 page += 1
-                callRequestSearch(query: movieSearchBar.text!)
+                if let query = currentQuery {
+                    callRequestSearch(query: query)
+                } else {
+                    callRequestSearch()
+                }
             }
         }
     }
