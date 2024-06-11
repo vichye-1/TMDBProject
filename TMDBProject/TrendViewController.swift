@@ -94,6 +94,7 @@ final class TrendViewController: UIViewController {
         movieTableView.register(TrendTableViewCell.self, forCellReuseIdentifier: identifier)
         
         movieTableView.rowHeight = 450
+        movieTableView.separatorStyle = .none
     }
 }
 
