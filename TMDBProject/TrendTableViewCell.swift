@@ -102,6 +102,13 @@ class TrendTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let nextImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .black
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
@@ -119,6 +126,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(actorsLabel)
         contentView.addSubview(dividerLabel)
         contentView.addSubview(detailLabel)
+        contentView.addSubview(nextImage)
     }
     
     private func configureTableViewCellLayOut() {
@@ -184,6 +192,12 @@ class TrendTableViewCell: UITableViewCell {
             make.leading.equalTo(movieView.snp.leading).offset(16)
             make.height.equalTo(20)
             make.width.equalTo(80)
+        }
+        
+        nextImage.snp.makeConstraints { make in
+            make.top.equalTo(dividerLabel.snp.bottom).offset(16)
+            make.trailing.equalTo(movieView.snp.trailing).inset(16)
+            make.height.width.equalTo(20)
         }
     }
     
