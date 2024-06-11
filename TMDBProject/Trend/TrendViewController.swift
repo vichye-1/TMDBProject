@@ -61,14 +61,20 @@ final class TrendViewController: UIViewController {
             case .success(let value):
                 self.movies = value.results
                 self.movieTableView.reloadData()
+                self.loadMovieId()
             case .failure(let error):
                 print("movie \(error)")
             }
         }
     }
+    private func loadMovieId() {
+        for movie in movies {
+            callRequestCredit(movie.id)
+        }
+    }
     
     private func callRequestCredit(_ movieId: Int) {
-        let url = APIUrl.tmdbMovieCredit(id: 940721).urlString
+        let url = APIUrl.tmdbMovieCredit(id: movieId).urlString
         let parameters: Parameters = [
             "language": "ko-KR"
         ]
