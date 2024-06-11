@@ -93,6 +93,15 @@ class TrendTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let detailLabel: UILabel = {
+        let label = UILabel()
+        label.text = "자세히 보기"
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 13)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureTableViewCellHierarchy()
@@ -109,6 +118,7 @@ class TrendTableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(actorsLabel)
         contentView.addSubview(dividerLabel)
+        contentView.addSubview(detailLabel)
     }
     
     private func configureTableViewCellLayOut() {
@@ -167,6 +177,13 @@ class TrendTableViewCell: UITableViewCell {
             make.horizontalEdges.equalTo(movieView).inset(20)
             make.top.equalTo(actorsLabel.snp.bottom).offset(20)
             make.height.equalTo(1)
+        }
+        
+        detailLabel.snp.makeConstraints { make in
+            make.top.equalTo(dividerLabel.snp.bottom).offset(16)
+            make.leading.equalTo(movieView.snp.leading).offset(16)
+            make.height.equalTo(20)
+            make.width.equalTo(80)
         }
     }
     
