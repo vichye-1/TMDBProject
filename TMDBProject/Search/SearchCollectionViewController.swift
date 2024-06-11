@@ -44,6 +44,8 @@ final class SearchCollectionViewController: UIViewController {
         configureLayout()
         configureUI()
         
+        movieSearchBar.delegate = self
+        
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
         searchCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
@@ -102,7 +104,6 @@ final class SearchCollectionViewController: UIViewController {
 
 extension SearchCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
         page = 1
         callRequestSearch(query: searchBar.text!)
     }
@@ -125,10 +126,16 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
 extension SearchCollectionViewController: UICollectionViewDataSourcePrefetching{
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         print("Prefetch \(indexPaths)")
+        
+        for item in indexPaths {
+            if searchList.results.count - 2 == item.row {
+                page += 1
+                callRequestSearch(query: movieSearchBar.text!)
+            }
+        }
     }
     
-    
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        print("Cancel prefetch \(indexPaths)")
+    }
 }
