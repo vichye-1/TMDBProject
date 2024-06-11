@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchCollectionViewCell: UICollectionViewCell {
     
-    private let posterImageView: UIImageView = {
+    let posterImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         return imageView
@@ -20,7 +20,6 @@ final class SearchCollectionViewCell: UICollectionViewCell {
         backgroundColor = .green
         configureCollectionViewCellHierarchy()
         configureCollectionViewLayout()
-        configureImage()
         // posterImageView.backgroundColor = .blue
     }
     
@@ -34,8 +33,13 @@ final class SearchCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func configureImage() {
-        
+    func configureCollectionViewCell(_ searchResult: searchResults) {
+        guard let searchPosterPath = searchResult.poster_path else {
+            posterImageView.image = UIImage(systemName: "questionmark.square.dashed")
+            return
+        }
+        let searchPosterURL = URL(string: "https://image.tmdb.org/t/p/w500\(searchPosterPath)")
+        posterImageView.kf.setImage(with: searchPosterURL)
     }
     
     required init?(coder: NSCoder) {

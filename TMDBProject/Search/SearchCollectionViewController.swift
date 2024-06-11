@@ -115,7 +115,7 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as! SearchCollectionViewCell
         let searchData = searchList.results[indexPath.row]
-        
+        cell.configureCollectionViewCell(searchData)
         return cell
     }
 }
