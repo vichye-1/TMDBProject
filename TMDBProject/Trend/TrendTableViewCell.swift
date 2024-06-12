@@ -14,7 +14,7 @@ class TrendTableViewCell: UITableViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 15)
+        label.font = Constant.Font.font15
         label.textColor = .darkGray
         return label
     }()

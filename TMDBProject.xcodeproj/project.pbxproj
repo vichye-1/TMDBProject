@@ -27,6 +27,8 @@
 		EF79C3682C184CA2009E66BD /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3672C184CA2009E66BD /* Search.swift */; };
 		EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */; };
 		EF79C36C2C185CAD009E66BD /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C36B2C185CAD009E66BD /* UICollectionViewCell+.swift */; };
+		EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3772C19722E009E66BD /* TrendDateLabel.swift */; };
+		EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37A2C1972AF009E66BD /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		EF79C3672C184CA2009E66BD /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF79C36B2C185CAD009E66BD /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
+		EF79C3772C19722E009E66BD /* TrendDateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDateLabel.swift; sourceTree = "<group>"; };
+		EF79C37A2C1972AF009E66BD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF79C3792C197298009E66BD /* Constant */,
+				EF79C3762C1971C4009E66BD /* CustomView */,
 				EF79C3642C184A7D009E66BD /* Search */,
 				EF79C3632C184A40009E66BD /* Trend */,
 				EF79C3532C1716CA009E66BD /* Extensions */,
@@ -136,6 +142,22 @@
 				EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		EF79C3762C1971C4009E66BD /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				EF79C3772C19722E009E66BD /* TrendDateLabel.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		EF79C3792C197298009E66BD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				EF79C37A2C1972AF009E66BD /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +243,8 @@
 			files = (
 				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
+				EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */,
+				EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */,
 				EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */,
 				EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */,
 				EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */,
