@@ -23,7 +23,7 @@ class TrendTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "#Mystery"
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = Constant.Font.bold17
         label.textColor = .black
         return label
     }()
@@ -55,7 +55,7 @@ class TrendTableViewCell: UITableViewCell {
         label.backgroundColor = .systemPurple
         label.text = "평점"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 13)
+        label.font = Constant.Font.font13
         label.textAlignment = .center
         return label
     }()
@@ -65,15 +65,14 @@ class TrendTableViewCell: UITableViewCell {
         label.backgroundColor = .white
         label.text = "3.3"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 13)
+        label.font = Constant.Font.font13
         label.textAlignment = .center
         return label
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Alice in borderland"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = Constant.Font.bold20
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -82,7 +81,7 @@ class TrendTableViewCell: UITableViewCell {
     private let actorsLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 15)
+        label.font = Constant.Font.font15
         label.textColor = .darkGray
         return label
     }()
@@ -98,7 +97,7 @@ class TrendTableViewCell: UITableViewCell {
         label.text = "자세히 보기"
         label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 13)
+        label.font = Constant.Font.font13
         return label
     }()
     

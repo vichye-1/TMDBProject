@@ -12,6 +12,6 @@ enum Constant {
         static let font13 = UIFont.systemFont(ofSize: 13)
         static let font15 = UIFont.systemFont(ofSize: 15)
         static let bold17 = UIFont.systemFont(ofSize: 17, weight: .bold)
-        static let bold20 = UIFont.systemFont(ofSize: 20)
+        static let bold20 = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
 }
