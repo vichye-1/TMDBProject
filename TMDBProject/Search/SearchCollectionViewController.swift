@@ -41,7 +41,6 @@ final class SearchCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequestSearch()
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -104,13 +103,14 @@ final class SearchCollectionViewController: UIViewController {
                 }
                 self.searchCollectionView.reloadData()
             case .failure(let error):
+                self.errorAlert()
                 print(error)
             }
         }
     }
     
     func errorAlert() {
-        let alert = UIAlertController(title: "Error!", message: "검색하고 싶은 영화 이름을 입력해주세요!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -120,9 +120,7 @@ final class SearchCollectionViewController: UIViewController {
 extension SearchCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         page = 1
-        guard let keyWord = movieSearchBar.text, !keyWord.isEmpty else {
-            return errorAlert()
-        }
+        guard let keyWord = movieSearchBar.text, !keyWord.isEmpty else { return }
         currentQuery = keyWord
         callRequestSearch(query: keyWord)
     }

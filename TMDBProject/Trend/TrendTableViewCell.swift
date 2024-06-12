@@ -202,6 +202,7 @@ class TrendTableViewCell: UITableViewCell {
     
     func configureCell(_ movie: MovieResult, _ casts: [Cast]) {
         dateLabel.text = movie.release_date
+        //genreLabel.text = movie.genre_ids
         titleLabel.text = movie.title
         rateNumLabel.text = String(format: "%.1f", movie.vote_average)
         actorsLabel.text = casts.map { $0.name }.joined(separator: ", ")

@@ -14,6 +14,7 @@ final class TrendViewController: UIViewController {
     let movieTableView = UITableView()
     var movies: [MovieResult] = []
     var casts: [Int: [Cast]] = [:]
+    var genres: [Int: [GenreDetail]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ final class TrendViewController: UIViewController {
         configureView()
         callRequestMovie()
         configureTableView()
+        callRequestGenre([878, 27, 28])
     }
     
     private func configureHierarchy() {
@@ -35,7 +37,6 @@ final class TrendViewController: UIViewController {
     }
     
     private func configureView() {
-        print(#function)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.triangle"), style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonTapped))
         view.backgroundColor = .white
@@ -87,6 +88,37 @@ final class TrendViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 self.casts[movieId] = value.cast
+                self.movieTableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func loadGenreId() {
+        for movie in movies {
+            callRequestGenre(movie.genre_ids)
+        }
+    }
+    
+    private func callRequestGenre(_ movieGenreId: [Int]) {
+        print(#function)
+        let url = APIUrl.tmdbGenre.urlString
+        let parameter: Parameters = [
+            "language": "en"
+        ]
+        let header: HTTPHeaders = [
+            "accept": "application/json",
+            "Authorization": APIKey.tmdbAccessToken
+        ]
+        AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Genres.self) { response in
+            switch response.result {
+            case .success(let value):
+                print("movieGenreId \(movieGenreId)")
+                for idx in 0..<movieGenreId.count {
+                    self.genres[movieGenreId[idx]] = value.genres
+                }
+                
                 self.movieTableView.reloadData()
             case .failure(let error):
                 print(error)
