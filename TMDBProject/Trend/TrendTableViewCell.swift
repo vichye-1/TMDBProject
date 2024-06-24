@@ -135,64 +135,54 @@ class TrendTableViewCell: UITableViewCell {
             make.width.equalTo(80)
             make.height.equalTo(20)
         }
-        
         genreLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom)
             make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.width.equalTo(90)
             make.height.equalTo(28)
         }
-        
         movieView.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(movieView.snp.width)
         }
-        
         posterImage.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(movieView)
             make.height.equalTo(movieView.snp.height).multipliedBy(0.6)
         }
-        
         rateStrLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImage.snp.leading).offset(20)
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
             make.width.equalTo(36)
             make.height.equalTo(24)
         }
-        
         rateNumLabel.snp.makeConstraints { make in
             make.leading.equalTo(rateStrLabel.snp.trailing)
             make.bottom.equalTo(posterImage.snp.bottom).inset(20)
             make.width.equalTo(36)
             make.height.equalTo(24)
         }
-        
         titleLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(movieView).inset(20)
             make.top.equalTo(posterImage.snp.bottom).offset(16)
             make.height.equalTo(30)
         }
-        
         actorsLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(movieView).inset(20)
             make.top.equalTo(titleLabel.snp.bottom)
             make.height.equalTo(28)
         }
-        
         dividerLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(movieView).inset(20)
             make.top.equalTo(actorsLabel.snp.bottom).offset(20)
             make.height.equalTo(1)
         }
-        
         detailLabel.snp.makeConstraints { make in
             make.top.equalTo(dividerLabel.snp.bottom).offset(16)
             make.leading.equalTo(movieView.snp.leading).offset(16)
             make.height.equalTo(20)
             make.width.equalTo(80)
         }
-        
         nextImage.snp.makeConstraints { make in
             make.top.equalTo(dividerLabel.snp.bottom).offset(16)
             make.trailing.equalTo(movieView.snp.trailing).inset(16)

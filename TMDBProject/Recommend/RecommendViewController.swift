@@ -13,22 +13,35 @@ class RecommendViewController: UIViewController {
     
     var page = 1
     
+    private let movieNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "극한직업"
+        label.textAlignment = .left
+        label.font = Constant.Font.bold20
+        label.textColor = .black
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureUI()
-        callRequestSimilar(movieId: 940721)
-        callRequestRecommend(movieId: 940721)
+        callRequestSimilar(movieId: 1022789)
+        callRequestRecommend(movieId: 1022789)
         callRequestPoster(movieId: 1022789)
     }
     
     private func configureHierarchy() {
-        
+        view.addSubview(movieNameLabel)
     }
     
     private func configureLayout() {
-        
+        movieNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.height.equalTo(34)
+        }
     }
     
     private func configureUI() {
