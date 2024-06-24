@@ -99,6 +99,7 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF85CFA02C29B7DF00E2C8F9 /* Recommend */,
 				EF85CF9C2C29B31700E2C8F9 /* Manager */,
 				EF79C3792C197298009E66BD /* Constant */,
 				EF79C3762C1971C4009E66BD /* CustomView */,
@@ -154,7 +155,6 @@
 			children = (
 				EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */,
 				EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */,
-				EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -181,6 +181,14 @@
 				EF85CF9D2C29B33000E2C8F9 /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		EF85CFA02C29B7DF00E2C8F9 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

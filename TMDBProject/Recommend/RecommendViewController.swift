@@ -19,6 +19,7 @@ class RecommendViewController: UIViewController {
         configureLayout()
         configureUI()
         callRequestSimilar(moiveId: 940721)
+        callRequestRecommend(moiveId: 940721)
     }
     
     private func configureHierarchy() {
@@ -48,7 +49,7 @@ class RecommendViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Similar.self) { response in
             switch response.result {
             case .success(let value):
-                print(value)
+                print("******\(value)*******")
             case .failure(let error):
                 self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
                 print(error)
@@ -58,8 +59,8 @@ class RecommendViewController: UIViewController {
     
     private func callRequestRecommend(moiveId: Int) {
         print(#function)
-        let url = APIUrl.tmdbSimilar(id: 940721).urlString
-        var parameter: Parameters = [
+        let url = APIUrl.tmdbRecommend(id: 940721).urlString
+        let parameter: Parameters = [
             "language": "ko-KR",
             "page": "\(page)"
         ]
@@ -68,10 +69,10 @@ class RecommendViewController: UIViewController {
             "Authorization": APIKey.tmdbAccessToken
         ]
         
-        AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Similar.self) { response in
+        AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Recommendations.self) { response in
             switch response.result {
             case .success(let value):
-                print(value)
+                print("======\(value)======")
             case .failure(let error):
                 self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
                 print(error)
