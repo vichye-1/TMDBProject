@@ -44,13 +44,10 @@ final class SearchCollectionViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
-        
         movieSearchBar.delegate = self
-        
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
         searchCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
-        
         searchCollectionView.prefetchDataSource = self
     }
     
@@ -64,7 +61,6 @@ final class SearchCollectionViewController: UIViewController {
             make.horizontalEdges.top.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(40)
         }
-        
         searchCollectionView.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(movieSearchBar.snp.bottom)
@@ -76,7 +72,6 @@ final class SearchCollectionViewController: UIViewController {
         navigationItem.titleView?.tintColor = .black
         view.backgroundColor = .white
     }
-    
     
     private func callRequestSearch(query: String? = nil) {
         print(#function)
@@ -131,6 +126,11 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
         let searchData = searchList.results[indexPath.row]
         cell.configureCollectionViewCell(searchData)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let recommendVC = RecommendViewController()
+        navigationController?.pushViewController(recommendVC, animated: true)
     }
 }
 

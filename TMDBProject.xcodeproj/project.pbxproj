@@ -30,6 +30,7 @@
 		EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3772C19722E009E66BD /* TrendDateLabel.swift */; };
 		EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37A2C1972AF009E66BD /* Constant.swift */; };
 		EF79C37D2C197D17009E66BD /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37C2C197D16009E66BD /* Genres.swift */; };
+		EF85CF8B2C29701900E2C8F9 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		EF79C3772C19722E009E66BD /* TrendDateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDateLabel.swift; sourceTree = "<group>"; };
 		EF79C37A2C1972AF009E66BD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		EF79C37C2C197D16009E66BD /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */,
 				EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */,
+				EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */,
 				EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */,
 				EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */,
+				EF85CF8B2C29701900E2C8F9 /* RecommendViewController.swift in Sources */,
 				EF79C36C2C185CAD009E66BD /* UICollectionViewCell+.swift in Sources */,
 				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
 				EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */,
