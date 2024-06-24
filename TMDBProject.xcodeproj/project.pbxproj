@@ -31,6 +31,7 @@
 		EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37A2C1972AF009E66BD /* Constant.swift */; };
 		EF79C37D2C197D17009E66BD /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37C2C197D16009E66BD /* Genres.swift */; };
 		EF85CF8B2C29701900E2C8F9 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */; };
+		EF85CF8D2C29768000E2C8F9 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF8C2C29768000E2C8F9 /* Similar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		EF79C37A2C1972AF009E66BD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		EF79C37C2C197D16009E66BD /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		EF85CF8C2C29768000E2C8F9 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				EF79C3462C16F758009E66BD /* Credit.swift */,
 				EF79C3672C184CA2009E66BD /* Search.swift */,
 				EF79C37C2C197D16009E66BD /* Genres.swift */,
+				EF85CF8C2C29768000E2C8F9 /* Similar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
 				EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */,
 				EF79C3682C184CA2009E66BD /* Search.swift in Sources */,
+				EF85CF8D2C29768000E2C8F9 /* Similar.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
 				EF79C3452C16F017009E66BD /* Movie.swift in Sources */,
 			);

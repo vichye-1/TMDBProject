@@ -13,7 +13,6 @@ import Kingfisher
 final class SearchCollectionViewController: UIViewController {
     
     var searchList = Search(results: [], page: 0, total_pages: 0, total_results: 0)
-    
     var page = 1
     var currentQuery: String?
     
@@ -116,7 +115,6 @@ extension SearchCollectionViewController: UISearchBarDelegate {
 }
 
 extension SearchCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchList.results.count
     }
