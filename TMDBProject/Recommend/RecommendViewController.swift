@@ -10,7 +10,12 @@ import Alamofire
 import SnapKit
 
 class RecommendViewController: UIViewController {
-    
+    var movieTitle: String? {
+        didSet {
+            movieNameLabel.text = movieTitle
+        }
+    }
+    var movieId: Int?
     var page = 1
     
     private let movieNameLabel: UILabel = {
@@ -30,9 +35,11 @@ class RecommendViewController: UIViewController {
         configureLayout()
         configureUI()
         configureTableView()
-        callRequestSimilar(movieId: 1022789)
-        callRequestRecommend(movieId: 1022789)
-        callRequestPoster(movieId: 1022789)
+        if let movieId = movieId {
+            callRequestSimilar(movieId: movieId)
+            callRequestRecommend(movieId: movieId)
+            callRequestPoster(movieId: movieId)
+        }
     }
     
     private func configureHierarchy() {

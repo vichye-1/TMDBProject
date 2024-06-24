@@ -18,4 +18,5 @@ struct searchResults: Decodable {
     let original_title: String?
     let poster_path: String?
     let title: String
+    let id: Int
 }

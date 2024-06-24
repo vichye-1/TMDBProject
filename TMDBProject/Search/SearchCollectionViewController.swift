@@ -111,7 +111,6 @@ extension SearchCollectionViewController: UISearchBarDelegate {
         currentQuery = keyWord
         callRequestSearch(query: keyWord)
     }
-    
 }
 
 extension SearchCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -127,7 +126,10 @@ extension SearchCollectionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMovie = searchList.results[indexPath.row]
         let recommendVC = RecommendViewController()
+        recommendVC.movieTitle = selectedMovie.title
+        recommendVC.movieId = selectedMovie.id
         navigationController?.pushViewController(recommendVC, animated: true)
     }
 }
