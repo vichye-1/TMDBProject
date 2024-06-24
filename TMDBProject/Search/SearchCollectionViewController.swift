@@ -103,17 +103,10 @@ final class SearchCollectionViewController: UIViewController {
                 }
                 self.searchCollectionView.reloadData()
             case .failure(let error):
-                self.errorAlert()
+                self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
                 print(error)
             }
         }
-    }
-    
-    func errorAlert() {
-        let alert = UIAlertController(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
     }
 }
 
