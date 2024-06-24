@@ -136,9 +136,18 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionType = SectionType.allCases[section]
-        print(section)
-        print(sectionType)
         return sectionType.title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0, 1:
+            return 150
+        case 2:
+            return 200
+        default:
+            return 150
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
