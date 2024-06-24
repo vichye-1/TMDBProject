@@ -18,8 +18,9 @@ class RecommendViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
-        callRequestSimilar(moiveId: 940721)
-        callRequestRecommend(moiveId: 940721)
+        callRequestSimilar(movieId: 940721)
+        callRequestRecommend(movieId: 940721)
+        callRequestPoster(movieId: 1022789)
     }
     
     private func configureHierarchy() {
@@ -34,16 +35,16 @@ class RecommendViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    private func callRequestSimilar(moiveId: Int) {
+    private func callRequestSimilar(movieId: Int) {
         print(#function)
-        let url = APIUrl.tmdbSimilar(id: 940721).urlString
-        var parameter: Parameters = [
-            "language": "ko-KR",
+        let url = APIUrl.tmdbSimilar(id: movieId).urlString
+        let parameter: Parameters = [
+            Constant.ParameterKey.language: Constant.ParameterValue.korean,
             "page": "\(page)"
         ]
         let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": APIKey.tmdbAccessToken
+            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
+            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
         ]
         
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Similar.self) { response in
@@ -57,16 +58,16 @@ class RecommendViewController: UIViewController {
         }
     }
     
-    private func callRequestRecommend(moiveId: Int) {
+    private func callRequestRecommend(movieId: Int) {
         print(#function)
-        let url = APIUrl.tmdbRecommend(id: 940721).urlString
+        let url = APIUrl.tmdbRecommend(id: movieId).urlString
         let parameter: Parameters = [
-            "language": "ko-KR",
+            Constant.ParameterKey.language: Constant.ParameterValue.korean,
             "page": "\(page)"
         ]
         let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": APIKey.tmdbAccessToken
+            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
+            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
         ]
         
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Recommendations.self) { response in
@@ -80,5 +81,22 @@ class RecommendViewController: UIViewController {
         }
     }
     
-    
+    private func callRequestPoster(movieId: Int) {
+        print(#function)
+        let url = APIUrl.tmdbPoster(id: movieId).urlString
+        let header: HTTPHeaders = [
+            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
+            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
+        ]
+        
+        AF.request(url, method: .get, headers: header).responseDecodable(of: Poster.self) { response in
+            switch response.result {
+            case .success(let value):
+                print("++++++++\(value)++++++++++")
+            case .failure(let error):
+                self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
+                print(error)
+            }
+        }
+    }
 }

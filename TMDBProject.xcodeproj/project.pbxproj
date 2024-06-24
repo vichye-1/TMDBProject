@@ -34,6 +34,7 @@
 		EF85CF982C29A51800E2C8F9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CF972C29A51800E2C8F9 /* SnapKit */; };
 		EF85CF9B2C29A52200E2C8F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CF9A2C29A52200E2C8F9 /* Kingfisher */; };
 		EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF9D2C29B33000E2C8F9 /* NetworkManager.swift */; };
+		EF85CFA22C29C4CE00E2C8F9 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		EF85CF8C2C29768000E2C8F9 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
 		EF85CF912C297B6500E2C8F9 /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
 		EF85CF9D2C29B33000E2C8F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				EF79C37C2C197D16009E66BD /* Genres.swift */,
 				EF85CF8C2C29768000E2C8F9 /* Similar.swift */,
 				EF85CF912C297B6500E2C8F9 /* Recommendations.swift */,
+				EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */,
 				EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */,
 				EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */,
+				EF85CFA22C29C4CE00E2C8F9 /* Poster.swift in Sources */,
 				EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */,
 				EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */,
 				EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */,

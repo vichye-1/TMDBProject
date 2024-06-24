@@ -24,4 +24,7 @@ enum Constant {
     enum ParameterValue {
         static let korean = "ko-KR"
     }
+    enum headerValue {
+        static let acceptValue = "application/json"
+    }
 }
