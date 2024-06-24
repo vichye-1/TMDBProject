@@ -200,13 +200,12 @@ class TrendTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(_ movie: MovieResult, _ casts: [Cast]) {
+    func configureCell(_ movie: MovieResult, _ cast: [Cast], _ genre: [GenreDetail]) {
         dateLabel.text = movie.release_date
-        //genreLabel.text = movie.genre_ids
+        genreLabel.text = genre.map{ $0.name }.joined(separator: ", ")
         titleLabel.text = movie.title
         rateNumLabel.text = String(format: "%.1f", movie.vote_average)
-        actorsLabel.text = casts.map { $0.name }.joined(separator: ", ")
-        // how to build an image URL : https://developer.themoviedb.org/docs/image-basics
+        actorsLabel.text = cast.map { $0.name }.joined(separator: ", ")
         guard let posterPath = movie.poster_path else {
             posterImage.image = UIImage(systemName: "timer")
             return

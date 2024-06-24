@@ -23,7 +23,6 @@ final class TrendViewController: UIViewController {
         configureView()
         callRequestMovie()
         configureTableView()
-        callRequestGenre([878, 27, 28])
     }
     
     private func configureHierarchy() {
@@ -70,6 +69,7 @@ final class TrendViewController: UIViewController {
     }
     private func loadMovieId() {
         for movie in movies {
+            callRequestGenre(movie.genre_ids)
             callRequestCredit(movie.id)
         }
     }
@@ -114,11 +114,10 @@ final class TrendViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Genres.self) { response in
             switch response.result {
             case .success(let value):
-                print("movieGenreId \(movieGenreId)")
                 for idx in 0..<movieGenreId.count {
                     self.genres[movieGenreId[idx]] = value.genres
+                    print(movieGenreId[idx])
                 }
-                
                 self.movieTableView.reloadData()
             case .failure(let error):
                 print(error)
@@ -148,7 +147,8 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
         let movie = movies[indexPath.row]
         let cast = casts[movie.id] ?? []
-        cell.configureCell(movie, cast)
+        let genre = genres[movie.genre_ids[0]] ?? []
+        cell.configureCell(movie, cast, genre)
         return cell
     }
 }
