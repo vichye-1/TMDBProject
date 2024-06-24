@@ -14,13 +14,14 @@ final class TrendViewController: UIViewController {
     let movieTableView = UITableView()
     var movies: [MovieResult] = []
     var casts: [Int: [Cast]] = [:]
-    var genres: [Int: [GenreDetail]] = [:]
+    var genres: [Int: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureView()
+        callRequestGenre()
         callRequestMovie()
         configureTableView()
     }
@@ -69,7 +70,6 @@ final class TrendViewController: UIViewController {
     }
     private func loadMovieId() {
         for movie in movies {
-            callRequestGenre(movie.genre_ids)
             callRequestCredit(movie.id)
         }
     }
@@ -95,17 +95,11 @@ final class TrendViewController: UIViewController {
         }
     }
     
-    private func loadGenreId() {
-        for movie in movies {
-            callRequestGenre(movie.genre_ids)
-        }
-    }
-    
-    private func callRequestGenre(_ movieGenreId: [Int]) {
+    private func callRequestGenre() {
         print(#function)
         let url = APIUrl.tmdbGenre.urlString
         let parameter: Parameters = [
-            "language": "en"
+            "language": "ko-KR"
         ]
         let header: HTTPHeaders = [
             "accept": "application/json",
@@ -114,9 +108,8 @@ final class TrendViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Genres.self) { response in
             switch response.result {
             case .success(let value):
-                for idx in 0..<movieGenreId.count {
-                    self.genres[movieGenreId[idx]] = value.genres
-                    print(movieGenreId[idx])
+                for genre in value.genres {
+                    self.genres[genre.id] = genre.name
                 }
                 self.movieTableView.reloadData()
             case .failure(let error):
@@ -147,8 +140,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
         let movie = movies[indexPath.row]
         let cast = casts[movie.id] ?? []
-        let genre = genres[movie.genre_ids[0]] ?? []
-        cell.configureCell(movie, cast, genre)
+        cell.configureCell(movie, cast, genres)
         return cell
     }
 }

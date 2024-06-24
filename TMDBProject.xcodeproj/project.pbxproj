@@ -16,13 +16,10 @@
 		EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3422C16E86D009E66BD /* APIKey.swift */; };
 		EF79C3452C16F017009E66BD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3442C16F017009E66BD /* Movie.swift */; };
 		EF79C3472C16F758009E66BD /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3462C16F758009E66BD /* Credit.swift */; };
-		EF79C34A2C16F945009E66BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C3492C16F945009E66BD /* Alamofire */; };
-		EF79C34D2C16F94F009E66BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C34C2C16F94F009E66BD /* SnapKit */; };
 		EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C34F2C1714AE009E66BD /* TrendTableViewCell.swift */; };
 		EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3512C1714E8009E66BD /* ReuseIdentifierProtocol.swift */; };
 		EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3542C1716E2009E66BD /* UIViewController+.swift */; };
 		EF79C3572C1716F3009E66BD /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3562C1716F3009E66BD /* UITableViewCell+.swift */; };
-		EF79C35A2C176BF4009E66BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF79C3592C176BF4009E66BD /* Kingfisher */; };
 		EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3652C184A96009E66BD /* SearchCollectionViewController.swift */; };
 		EF79C3682C184CA2009E66BD /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3672C184CA2009E66BD /* Search.swift */; };
 		EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3692C185C53009E66BD /* SearchCollectionViewCell.swift */; };
@@ -32,6 +29,10 @@
 		EF79C37D2C197D17009E66BD /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C37C2C197D16009E66BD /* Genres.swift */; };
 		EF85CF8B2C29701900E2C8F9 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */; };
 		EF85CF8D2C29768000E2C8F9 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF8C2C29768000E2C8F9 /* Similar.swift */; };
+		EF85CF922C297B6600E2C8F9 /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CF912C297B6500E2C8F9 /* Recommendations.swift */; };
+		EF85CF952C29A50F00E2C8F9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CF942C29A50F00E2C8F9 /* Alamofire */; };
+		EF85CF982C29A51800E2C8F9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CF972C29A51800E2C8F9 /* SnapKit */; };
+		EF85CF9B2C29A52200E2C8F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CF9A2C29A52200E2C8F9 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		EF79C37C2C197D16009E66BD /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		EF85CF8C2C29768000E2C8F9 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
+		EF85CF912C297B6500E2C8F9 /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF79C35A2C176BF4009E66BD /* Kingfisher in Frameworks */,
-				EF79C34A2C16F945009E66BD /* Alamofire in Frameworks */,
-				EF79C34D2C16F94F009E66BD /* SnapKit in Frameworks */,
+				EF85CF9B2C29A52200E2C8F9 /* Kingfisher in Frameworks */,
+				EF85CF952C29A50F00E2C8F9 /* Alamofire in Frameworks */,
+				EF85CF982C29A51800E2C8F9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +122,7 @@
 				EF79C3672C184CA2009E66BD /* Search.swift */,
 				EF79C37C2C197D16009E66BD /* Genres.swift */,
 				EF85CF8C2C29768000E2C8F9 /* Similar.swift */,
+				EF85CF912C297B6500E2C8F9 /* Recommendations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,9 +189,9 @@
 			);
 			name = TMDBProject;
 			packageProductDependencies = (
-				EF79C3492C16F945009E66BD /* Alamofire */,
-				EF79C34C2C16F94F009E66BD /* SnapKit */,
-				EF79C3592C176BF4009E66BD /* Kingfisher */,
+				EF85CF942C29A50F00E2C8F9 /* Alamofire */,
+				EF85CF972C29A51800E2C8F9 /* SnapKit */,
+				EF85CF9A2C29A52200E2C8F9 /* Kingfisher */,
 			);
 			productName = TMDBProject;
 			productReference = EF79C3292C16D571009E66BD /* TMDBProject.app */;
@@ -219,9 +222,9 @@
 			);
 			mainGroup = EF79C3202C16D571009E66BD;
 			packageReferences = (
-				EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */,
-				EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */,
-				EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EF85CF932C29A50F00E2C8F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EF85CF962C29A51800E2C8F9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EF85CF992C29A52100E2C8F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EF79C32A2C16D571009E66BD /* Products */;
 			projectDirPath = "";
@@ -254,6 +257,7 @@
 				EF79C37D2C197D17009E66BD /* Genres.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */,
+				EF85CF922C297B6600E2C8F9 /* Recommendations.swift in Sources */,
 				EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */,
 				EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */,
 				EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */,
@@ -491,7 +495,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		EF85CF932C29A50F00E2C8F9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -499,7 +503,7 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		EF85CF962C29A51800E2C8F9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -507,7 +511,7 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		EF85CF992C29A52100E2C8F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -518,19 +522,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF79C3492C16F945009E66BD /* Alamofire */ = {
+		EF85CF942C29A50F00E2C8F9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF79C3482C16F945009E66BD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = EF85CF932C29A50F00E2C8F9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		EF79C34C2C16F94F009E66BD /* SnapKit */ = {
+		EF85CF972C29A51800E2C8F9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF79C34B2C16F94F009E66BD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = EF85CF962C29A51800E2C8F9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		EF79C3592C176BF4009E66BD /* Kingfisher */ = {
+		EF85CF9A2C29A52200E2C8F9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF79C3582C176BF4009E66BD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = EF85CF992C29A52100E2C8F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

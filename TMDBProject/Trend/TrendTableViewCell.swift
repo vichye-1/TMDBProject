@@ -200,9 +200,10 @@ class TrendTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(_ movie: MovieResult, _ cast: [Cast], _ genre: [GenreDetail]) {
+    func configureCell(_ movie: MovieResult, _ cast: [Cast], _ genre: [Int: String]) {
         dateLabel.text = movie.release_date
-        genreLabel.text = genre.map{ $0.name }.joined(separator: ", ")
+        let genreNames = movie.genre_ids.compactMap { genre[$0] }
+        genreLabel.text = genreNames.joined(separator: ", ")
         titleLabel.text = movie.title
         rateNumLabel.text = String(format: "%.1f", movie.vote_average)
         actorsLabel.text = cast.map { $0.name }.joined(separator: ", ")

@@ -14,4 +14,8 @@ enum Constant {
         static let bold17 = UIFont.systemFont(ofSize: 17, weight: .bold)
         static let bold20 = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
+    enum Parameters {
+        static let language = "language"
+        
+    }
 }
