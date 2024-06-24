@@ -99,11 +99,11 @@ final class TrendViewController: UIViewController {
         print(#function)
         let url = APIUrl.tmdbGenre.urlString
         let parameter: Parameters = [
-            "language": "ko-KR"
+            Constant.ParameterKey.language : Constant.ParameterValue.korean
         ]
         let header: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": APIKey.tmdbAccessToken
+            Constant.HeaderKey.accept: APIKey.accept,
+            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
         ]
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Genres.self) { response in
             switch response.result {
