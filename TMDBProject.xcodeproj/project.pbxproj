@@ -36,6 +36,7 @@
 		EF85CFA22C29C4CE00E2C8F9 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */; };
 		EF85CFA42C29D78F00E2C8F9 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFA32C29D78F00E2C8F9 /* SectionType.swift */; };
 		EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFA52C29DA1500E2C8F9 /* RecommendTableViewCell.swift */; };
+		EF85CFD02C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 		EF85CFA32C29D78F00E2C8F9 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
 		EF85CFA52C29DA1500E2C8F9 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
+		EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				EF85CF8A2C29701900E2C8F9 /* RecommendViewController.swift */,
 				EF85CFA52C29DA1500E2C8F9 /* RecommendTableViewCell.swift */,
+				EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
 				EF79C3452C16F017009E66BD /* Movie.swift in Sources */,
+				EF85CFD02C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -94,8 +94,26 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
         return SectionType.allCases.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = RecommendTableViewCell.identifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RecommendTableViewCell
+        let tableViewCellIdentifier = RecommendTableViewCell.identifier
+        let collectionViewCellIdentifier = RecommendCollectionViewCell.identifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! RecommendTableViewCell
+        cell.collectionView.delegate = self
+        cell.collectionView.dataSource = self
+        cell.collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: collectionViewCellIdentifier)
+        cell.collectionView.tag = indexPath.row
+        cell.collectionView.reloadData()
+        return cell
+    }
+}
+
+extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = RecommendCollectionViewCell.identifier
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! RecommendCollectionViewCell
         return cell
     }
 }
