@@ -96,6 +96,9 @@ final class SearchCollectionViewController: UIViewController {
                     self.searchList.results.append(contentsOf: value.results)
                 }
                 self.searchCollectionView.reloadData()
+                if value.results.isEmpty {
+                    self.errorAlert(title: "Error!", message: "🥲찾으시려는 영화가 없습니다🥲", ok: "확인")
+                }
             case .failure(let error):
                 self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
                 print(error)
