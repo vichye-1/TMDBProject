@@ -12,6 +12,8 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     let posterView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .systemMint
+        image.layer.cornerRadius = 8
+        image.clipsToBounds = true
         return image
     }()
     override init(frame: CGRect) {
