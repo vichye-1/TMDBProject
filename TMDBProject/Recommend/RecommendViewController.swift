@@ -42,8 +42,10 @@ class RecommendViewController: UIViewController {
         NetworkManager.shared.fetchSimilar(movieId: 1022789) { _ in
             print("SimilarSuccess=====")
         }
+        NetworkManager.shared.fetchRecommend(movieId: 1022789) { _ in
+            print("recommendSuccess=====")
+        }
         if let movieId = movieId {
-            callRequestRecommend(movieId: movieId)
             callRequestPoster(movieId: movieId)
         }
     }
@@ -76,28 +78,7 @@ class RecommendViewController: UIViewController {
         recommendTableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
     }
     
-    private func callRequestRecommend(movieId: Int) {
-        print(#function)
-        let url = APIUrl.tmdbRecommend(id: movieId).urlString
-        let parameter: Parameters = [
-            Constant.ParameterKey.language: Constant.ParameterValue.korean,
-            "page": "\(page)"
-        ]
-        let header: HTTPHeaders = [
-            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
-            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
-        ]
-        
-        AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Recommendations.self) { response in
-            switch response.result {
-            case .success(let value):
-                print("recommend success")
-            case .failure(let error):
-                self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
-                print(error)
-            }
-        }
-    }
+    
     
     private func callRequestPoster(movieId: Int) {
         print(#function)
