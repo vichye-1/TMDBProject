@@ -32,14 +32,20 @@ class RecommendViewController: UIViewController {
         return label
     }()
     
-    let recommendTableView = UITableView()
+    lazy var recommendTableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let identifier = RecommendTableViewCell.identifier
+        tableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureLayout()
         configureUI()
-        configureTableView()
         NetworkManager.shared.fetchSimilar(movieId: 1022789) { _ in
             print("SimilarSuccess=====")
         }
@@ -70,13 +76,6 @@ class RecommendViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-    }
-    
-    private func configureTableView() {
-        recommendTableView.delegate = self
-        recommendTableView.dataSource = self
-        let identifier = RecommendTableViewCell.identifier
-        recommendTableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
     }
 }
 
