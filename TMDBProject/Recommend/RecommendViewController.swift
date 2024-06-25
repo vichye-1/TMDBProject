@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 import SnapKit
 
 class RecommendViewController: UIViewController {
@@ -15,9 +16,9 @@ class RecommendViewController: UIViewController {
             movieNameLabel.text = movieTitle
         }
     }
-    var movieId: Int?
+    var movieId: Int = 0
     var page = 1
-    var recommendPoster : [[RecommendResult]] = [
+    var posterList : [[RecommendResult]] = [
     [RecommendResult(poster_path: "")],
     [RecommendResult(poster_path: "")]
     ]
@@ -46,15 +47,7 @@ class RecommendViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
-        NetworkManager.shared.fetchSimilar(movieId: 1022789) { _ in
-            print("SimilarSuccess=====")
-        }
-        NetworkManager.shared.fetchRecommend(movieId: 1022789) { _ in
-            print("recommendSuccess=====")
-        }
-        NetworkManager.shared.fetchPoster(movieId: 1022789) { _ in
-            print("posterSuccess======")
-        }
+        fetchMovieData(movieId: movieId)
     }
     
     private func configureHierarchy() {
@@ -76,6 +69,20 @@ class RecommendViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
+    }
+    
+    private func fetchMovieData(movieId: Int) {
+        NetworkManager.shared.fetchSimilar(movieId: movieId) { data in
+            print(data)
+            self.posterList[0] = data
+            self.recommendTableView.reloadData()
+        }
+        NetworkManager.shared.fetchRecommend(movieId: movieId) { data in
+            print("recommendSuccess=====")
+        }
+        NetworkManager.shared.fetchPoster(movieId: movieId) { _ in
+            print("posterSuccess======")
+        }
     }
 }
 
@@ -101,6 +108,16 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
         cell.collectionView.dataSource = self
         cell.collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: collectionViewCellIdentifier)
         cell.collectionView.tag = indexPath.row
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = SectionType.similarMovie.title
+        case 1:
+            cell.titleLabel.text = SectionType.recommendedMovie.title
+        case 2:
+            cell.titleLabel.text = SectionType.poster.title
+        default:
+            break
+        }
         cell.collectionView.reloadData()
         return cell
     }
@@ -108,12 +125,36 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch collectionView.tag {
+        case 0, 1:
+            return posterList[collectionView.tag].count
+        case 2:
+            return relatePoster.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = RecommendCollectionViewCell.identifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! RecommendCollectionViewCell
+        var posterPath: String?
+        switch collectionView.tag {
+        case 0, 1:
+            posterPath = posterList[collectionView.tag][indexPath.item].poster_path
+        case 2:
+            posterPath = relatePoster[indexPath.item].file_path
+        default:
+            break
+        }
+        if let posterPath = posterPath {
+            let url = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
+            cell.posterView.kf.setImage(with: url)
+        }
         return cell
     }
+}
+
+extension RecommendViewController: UICollectionViewDelegateFlowLayout {
+    
 }
