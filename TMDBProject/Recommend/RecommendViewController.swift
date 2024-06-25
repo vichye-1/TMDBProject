@@ -69,6 +69,7 @@ class RecommendViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
+        recommendTableView.separatorStyle = .none
     }
     
     private func fetchMovieData(movieId: Int) {
@@ -78,7 +79,6 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchSimilar(movieId: movieId) { data in
                 self.posterList[0] = data
                 self.recommendTableView.reloadData()
-                //print("=========11111111")
                 group.leave()
             }
         }
@@ -87,7 +87,6 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchRecommend(movieId: movieId) { data in
                 self.posterList[1] = data
                 self.recommendTableView.reloadData()
-                //print("============222222222")
                 group.leave()
             }
         }
@@ -96,12 +95,10 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchPoster(movieId: movieId) { data in
                 self.relatePosterList = data
                 self.recommendTableView.reloadData()
-                //print("============333333333")
                 group.leave()
             }
         }
         group.notify(queue: .main) {
-            //rprint("=========444444444")
             self.recommendTableView.reloadData()
         }
     }
