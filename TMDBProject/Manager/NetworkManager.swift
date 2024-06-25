@@ -23,7 +23,6 @@ class NetworkManager {
             Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
             Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
         ]
-        
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Recommendations.self) { response in
             switch response.result {
             case .success(let value):
@@ -45,12 +44,29 @@ class NetworkManager {
             Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
             Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
         ]
-        
         AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Recommendations.self) { response in
             switch response.result {
             case .success(let value):
                 print("recommend success")
                 completionHandler(value.results)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func fetchPoster(movieId: Int, completionHandler: @escaping ([PosterResult]) -> Void) {
+        print(#function)
+        let url = APIUrl.tmdbPoster(id: movieId).urlString
+        let header: HTTPHeaders = [
+            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
+            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
+        ]
+        AF.request(url, method: .get, headers: header).responseDecodable(of: Poster.self) { response in
+            switch response.result {
+            case .success(let value):
+                print("poster success")
+                completionHandler(value.posters)
             case .failure(let error):
                 print(error)
             }

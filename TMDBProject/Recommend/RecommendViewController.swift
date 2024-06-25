@@ -21,6 +21,7 @@ class RecommendViewController: UIViewController {
     [RecommendResult(poster_path: "")],
     [RecommendResult(poster_path: "")]
     ]
+    var relatePoster: [PosterResult] = [PosterResult(file_path: "")]
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
@@ -45,8 +46,8 @@ class RecommendViewController: UIViewController {
         NetworkManager.shared.fetchRecommend(movieId: 1022789) { _ in
             print("recommendSuccess=====")
         }
-        if let movieId = movieId {
-            callRequestPoster(movieId: movieId)
+        NetworkManager.shared.fetchPoster(movieId: 1022789) { _ in
+            print("posterSuccess======")
         }
     }
     
@@ -76,27 +77,6 @@ class RecommendViewController: UIViewController {
         recommendTableView.dataSource = self
         let identifier = RecommendTableViewCell.identifier
         recommendTableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
-    }
-    
-    
-    
-    private func callRequestPoster(movieId: Int) {
-        print(#function)
-        let url = APIUrl.tmdbPoster(id: movieId).urlString
-        let header: HTTPHeaders = [
-            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
-            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
-        ]
-        
-        AF.request(url, method: .get, headers: header).responseDecodable(of: Poster.self) { response in
-            switch response.result {
-            case .success(let value):
-                print("poster success")
-            case .failure(let error):
-                self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
-                print(error)
-            }
-        }
     }
 }
 
