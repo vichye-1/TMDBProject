@@ -21,7 +21,6 @@ class RecommendTableViewCell: UITableViewCell {
     
     static func layout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 110, height: 160)
         layout.minimumLineSpacing = 4
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
