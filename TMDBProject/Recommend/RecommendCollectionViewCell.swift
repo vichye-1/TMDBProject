@@ -16,13 +16,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     }()
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        configureHierarchy()
-        configureLayout()
-    }
-    private func configureHierarchy() {
         contentView.addSubview(posterView)
-    }
-    private func configureLayout() {
         posterView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
         }

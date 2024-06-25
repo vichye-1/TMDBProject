@@ -49,6 +49,7 @@ class RecommendTableViewCell: UITableViewCell {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
             make.horizontalEdges.equalTo(contentView)
+            make.bottom.equalTo(contentView).inset(8)
         }
     }
     
