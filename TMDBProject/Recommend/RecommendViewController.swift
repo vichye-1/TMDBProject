@@ -17,6 +17,10 @@ class RecommendViewController: UIViewController {
     }
     var movieId: Int?
     var page = 1
+    var recommendPoster : [[RecommendResult]] = [
+    [RecommendResult(poster_path: "")],
+    [RecommendResult(poster_path: "")]
+    ]
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
@@ -35,8 +39,10 @@ class RecommendViewController: UIViewController {
         configureLayout()
         configureUI()
         configureTableView()
+        NetworkManager.shared.fetchSimilar(movieId: 1022789) { _ in
+            print("SimilarSuccess=====")
+        }
         if let movieId = movieId {
-            callRequestSimilar(movieId: movieId)
             callRequestRecommend(movieId: movieId)
             callRequestPoster(movieId: movieId)
         }
@@ -68,29 +74,6 @@ class RecommendViewController: UIViewController {
         recommendTableView.dataSource = self
         let identifier = RecommendTableViewCell.identifier
         recommendTableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
-    }
-    
-    private func callRequestSimilar(movieId: Int) {
-        print(#function)
-        let url = APIUrl.tmdbSimilar(id: movieId).urlString
-        let parameter: Parameters = [
-            Constant.ParameterKey.language: Constant.ParameterValue.korean,
-            "page": "\(page)"
-        ]
-        let header: HTTPHeaders = [
-            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
-            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
-        ]
-        
-        AF.request(url, method: .get, parameters: parameter, headers: header).responseDecodable(of: Similar.self) { response in
-            switch response.result {
-            case .success(let value):
-                print("similarsuccess")
-            case .failure(let error):
-                self.errorAlert(title: "Error!", message: "네트워크 통신이 원활하지 않습니다", ok: "확인")
-                print(error)
-            }
-        }
     }
     
     private func callRequestRecommend(movieId: Int) {
