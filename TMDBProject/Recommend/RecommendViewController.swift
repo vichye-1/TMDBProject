@@ -22,7 +22,7 @@ class RecommendViewController: UIViewController {
     [RecommendResult(poster_path: "")],
     [RecommendResult(poster_path: "")]
     ]
-    var relatePoster: [PosterResult] = [PosterResult(file_path: "")]
+    var relatePosterList: [PosterResult] = [PosterResult(file_path: "")]
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
@@ -78,10 +78,12 @@ class RecommendViewController: UIViewController {
             self.recommendTableView.reloadData()
         }
         NetworkManager.shared.fetchRecommend(movieId: movieId) { data in
-            print("recommendSuccess=====")
+            self.posterList[1] = data
+            self.recommendTableView.reloadData()
         }
-        NetworkManager.shared.fetchPoster(movieId: movieId) { _ in
-            print("posterSuccess======")
+        NetworkManager.shared.fetchPoster(movieId: movieId) { data in
+            self.relatePosterList = data
+            self.recommendTableView.reloadData()
         }
     }
 }
@@ -129,7 +131,7 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         case 0, 1:
             return posterList[collectionView.tag].count
         case 2:
-            return relatePoster.count
+            return relatePosterList.count
         default:
             return 0
         }
@@ -143,7 +145,7 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         case 0, 1:
             posterPath = posterList[collectionView.tag][indexPath.item].poster_path
         case 2:
-            posterPath = relatePoster[indexPath.item].file_path
+            posterPath = relatePosterList[indexPath.item].file_path
         default:
             break
         }
