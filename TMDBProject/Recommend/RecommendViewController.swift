@@ -92,7 +92,7 @@ class RecommendViewController: UIViewController {
         }
         group.enter()
         DispatchQueue.global().async(group: group) {
-            NetworkManager.shared.fetchPoster(movieId: movieId) { data in
+            NetworkManager.shared.fetchPoster(api: .poster(id: movieId)) { data in
                 self.relatePosterList = data
                 self.recommendTableView.reloadData()
                 group.leave()

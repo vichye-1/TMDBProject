@@ -13,7 +13,8 @@ class NetworkManager {
     
     private init() { }
     
-    typealias recommendHandler = (([RecommendResult]) -> Void)
+    typealias recommendHandler = ([RecommendResult]) -> Void
+    typealias posterHandler = ([PosterResult]) -> Void
     
     func fetchRecommend(api: TMDBAPI, completionHandler: @escaping recommendHandler) {
         print(#function)
@@ -27,15 +28,9 @@ class NetworkManager {
             }
         }
     }
-    
-    func fetchPoster(movieId: Int, completionHandler: @escaping ([PosterResult]) -> Void) {
+    func fetchPoster(api: TMDBAPI, completionHandler: @escaping posterHandler) {
         print(#function)
-        let url = APIUrl.tmdbPoster(id: movieId).urlString
-        let header: HTTPHeaders = [
-            Constant.HeaderKey.accept: Constant.headerValue.acceptValue,
-            Constant.HeaderKey.authorization: APIKey.tmdbAccessToken
-        ]
-        AF.request(url, method: .get, headers: header).responseDecodable(of: Poster.self) { response in
+        AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: Poster.self) { response in
             switch response.result {
             case .success(let value):
                 print("poster success")
