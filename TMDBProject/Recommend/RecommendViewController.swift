@@ -76,7 +76,7 @@ class RecommendViewController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         DispatchQueue.global().async(group: group) {
-            NetworkManager.shared.fetchSimilar(movieId: movieId) { data in
+            NetworkManager.shared.fetchSimilar(api: .similar(id: movieId)) { data in
                 self.posterList[0] = data
                 self.recommendTableView.reloadData()
                 group.leave()

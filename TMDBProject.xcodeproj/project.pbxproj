@@ -36,6 +36,7 @@
 		EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFA52C29DA1500E2C8F9 /* RecommendTableViewCell.swift */; };
 		EF85CFD02C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */; };
 		EF85CFD72C2BEA8D00E2C8F9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFD62C2BEA8D00E2C8F9 /* UIView+.swift */; };
+		EF85CFD92C2BEFFC00E2C8F9 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		EF85CFA52C29DA1500E2C8F9 /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
 		EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF85CFD62C2BEA8D00E2C8F9 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				EF85CF9D2C29B33000E2C8F9 /* NetworkManager.swift */,
+				EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
 				EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */,
 				EF79C3682C184CA2009E66BD /* Search.swift in Sources */,
+				EF85CFD92C2BEFFC00E2C8F9 /* TMDBAPI.swift in Sources */,
 				EF85CFA42C29D78F00E2C8F9 /* SectionType.swift in Sources */,
 				EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
