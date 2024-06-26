@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SkeletonView
 import SnapKit
 import Toast
 
@@ -40,6 +41,7 @@ class RecommendViewController: UIViewController {
         tableView.dataSource = self
         let identifier = RecommendTableViewCell.identifier
         tableView.register(RecommendTableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.isSkeletonable = true
         return tableView
     }()
     
@@ -199,6 +201,22 @@ extension RecommendViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 180, height: 260)
         default:
             return CGSize(width: 120, height: 160)
+        }
+    }
+}
+
+extension RecommendViewController: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return RecommendCollectionViewCell.identifier
+    }
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch skeletonView.tag {
+        case 0, 1:
+            return posterList[skeletonView.tag].count
+        case 2:
+            return relatePosterList.count
+        default:
+            return 0
         }
     }
 }

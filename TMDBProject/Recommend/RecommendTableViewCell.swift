@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class RecommendTableViewCell: UITableViewCell {
     let titleLabel = {

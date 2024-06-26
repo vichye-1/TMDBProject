@@ -6,14 +6,11 @@
 //
 
 import UIKit
-import SkeletonView
 import SnapKit
 
 class RecommendCollectionViewCell: UICollectionViewCell {
     let posterView: UIImageView = {
         let image = UIImageView()
-        image.isSkeletonable = true
-        //image.backgroundColor = .systemMint
         image.layer.cornerRadius = 8
         image.clipsToBounds = true
         return image
