@@ -110,7 +110,7 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
         case 0, 1:
             return 200
         case 2:
-            return 350
+            return 400
         default:
             return 200
         }
@@ -174,10 +174,7 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
 }
 
 extension RecommendViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         switch collectionView.tag {
         case 0, 1:

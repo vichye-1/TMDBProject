@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ReuseIdentifierProtocol {
+protocol ReuseIdentifierProtocol: AnyObject {
     static var identifier: String { get }
 }
