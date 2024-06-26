@@ -37,6 +37,8 @@
 		EF85CFD02C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFCF2C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift */; };
 		EF85CFD72C2BEA8D00E2C8F9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFD62C2BEA8D00E2C8F9 /* UIView+.swift */; };
 		EF85CFD92C2BEFFC00E2C8F9 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */; };
+		EF85CFDC2C2C0F5700E2C8F9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CFDB2C2C0F5700E2C8F9 /* SkeletonView */; };
+		EF85CFDF2C2C144000E2C8F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CFDE2C2C144000E2C8F9 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF85CFDC2C2C0F5700E2C8F9 /* SkeletonView in Frameworks */,
 				EF85CF9B2C29A52200E2C8F9 /* Kingfisher in Frameworks */,
 				EF85CF952C29A50F00E2C8F9 /* Alamofire in Frameworks */,
+				EF85CFDF2C2C144000E2C8F9 /* Toast in Frameworks */,
 				EF85CF982C29A51800E2C8F9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +224,8 @@
 				EF85CF942C29A50F00E2C8F9 /* Alamofire */,
 				EF85CF972C29A51800E2C8F9 /* SnapKit */,
 				EF85CF9A2C29A52200E2C8F9 /* Kingfisher */,
+				EF85CFDB2C2C0F5700E2C8F9 /* SkeletonView */,
+				EF85CFDE2C2C144000E2C8F9 /* Toast */,
 			);
 			productName = TMDBProject;
 			productReference = EF79C3292C16D571009E66BD /* TMDBProject.app */;
@@ -253,6 +259,8 @@
 				EF85CF932C29A50F00E2C8F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EF85CF962C29A51800E2C8F9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				EF85CF992C29A52100E2C8F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EF85CFDA2C2C0F5700E2C8F9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				EF85CFDD2C2C144000E2C8F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = EF79C32A2C16D571009E66BD /* Products */;
 			projectDirPath = "";
@@ -448,6 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2248FQ948Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMDBProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,6 +488,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2248FQ948Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMDBProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -551,6 +561,22 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		EF85CFDA2C2C0F5700E2C8F9 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
+		EF85CFDD2C2C144000E2C8F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -568,6 +594,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF85CF992C29A52100E2C8F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		EF85CFDB2C2C0F5700E2C8F9 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF85CFDA2C2C0F5700E2C8F9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		EF85CFDE2C2C144000E2C8F9 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF85CFDD2C2C144000E2C8F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

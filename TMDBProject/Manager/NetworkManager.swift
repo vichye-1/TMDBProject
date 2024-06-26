@@ -13,7 +13,7 @@ class NetworkManager {
     
     private init() { }
     
-    typealias recommendHandler = ([RecommendResult]) -> Void
+    typealias recommendHandler = ([RecommendResult]?, AFError?) -> Void
     typealias posterHandler = ([PosterResult]) -> Void
     
     func fetchRecommend(api: TMDBAPI, completionHandler: @escaping recommendHandler) {
@@ -22,8 +22,9 @@ class NetworkManager {
             switch response.result {
             case .success(let value):
                 print("similarsuccess")
-                completionHandler(value.results)
+                completionHandler(value.results, nil)
             case .failure(let error):
+                completionHandler(nil, error)
                 print(error)
             }
         }

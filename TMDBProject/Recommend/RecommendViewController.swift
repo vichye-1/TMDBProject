@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SnapKit
+import Toast
 
 class RecommendViewController: UIViewController {
     var movieTitle: String? {
@@ -76,16 +77,26 @@ class RecommendViewController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         DispatchQueue.global().async(group: group) {
-            NetworkManager.shared.fetchRecommend(api: .similar(id: movieId)) { data in
-                self.posterList[0] = data
+            NetworkManager.shared.fetchRecommend(api: .similar(id: movieId)) { success, error in
+                if let success = success {
+                    self.posterList[0] = success
+                    print("=========1")
+                } else {
+                    self.showToastMessage(message: "비슷한 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
+                }
                 self.recommendTableView.reloadData()
                 group.leave()
             }
         }
         group.enter()
         DispatchQueue.global().async(group: group) {
-            NetworkManager.shared.fetchRecommend(api: .recommend(id: movieId)) { data in
-                self.posterList[1] = data
+            NetworkManager.shared.fetchRecommend(api: .recommend(id: movieId)) { success, error in
+                if let success = success {
+                    self.posterList[1] = success
+                    print("========2")
+                } else {
+                    self.showToastMessage(message: "추천 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
+                }
                 self.recommendTableView.reloadData()
                 group.leave()
             }
@@ -94,13 +105,18 @@ class RecommendViewController: UIViewController {
         DispatchQueue.global().async(group: group) {
             NetworkManager.shared.fetchPoster(api: .poster(id: movieId)) { data in
                 self.relatePosterList = data
+                print("=======3")
                 self.recommendTableView.reloadData()
                 group.leave()
             }
         }
         group.notify(queue: .main) {
+            print("========4")
             self.recommendTableView.reloadData()
         }
+    }
+    private func showToastMessage(message: String) {
+        self.view.makeToast(message, position: .bottom)
     }
 }
 
@@ -180,7 +196,7 @@ extension RecommendViewController: UICollectionViewDelegateFlowLayout {
         case 0, 1:
             return CGSize(width: 110, height: 160)
         case 2:
-            return CGSize(width: 180, height: 350)
+            return CGSize(width: 180, height: 260)
         default:
             return CGSize(width: 120, height: 160)
         }
