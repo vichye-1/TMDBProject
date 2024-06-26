@@ -128,7 +128,7 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
         case 0, 1:
             return 200
         case 2:
-            return 400
+            return 300
         default:
             return 200
         }
