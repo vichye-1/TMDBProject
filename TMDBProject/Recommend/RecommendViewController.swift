@@ -80,7 +80,6 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchRecommend(api: .similar(id: movieId)) { success, error in
                 if let success = success {
                     self.posterList[0] = success
-                    print("=========1")
                 } else {
                     self.showToastMessage(message: "비슷한 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
                 }
@@ -93,7 +92,6 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchRecommend(api: .recommend(id: movieId)) { success, error in
                 if let success = success {
                     self.posterList[1] = success
-                    print("========2")
                 } else {
                     self.showToastMessage(message: "추천 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
                 }
@@ -106,7 +104,6 @@ class RecommendViewController: UIViewController {
             NetworkManager.shared.fetchPoster(api: .poster(id: movieId)) { success, error in
                 if let success = success {
                     self.relatePosterList = success
-                    print("=======3")
                 } else {
                     self.showToastMessage(message: "영화 포스터의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요")
                 }
@@ -115,7 +112,6 @@ class RecommendViewController: UIViewController {
             }
         }
         group.notify(queue: .main) {
-            print("========4")
             self.recommendTableView.reloadData()
         }
     }
