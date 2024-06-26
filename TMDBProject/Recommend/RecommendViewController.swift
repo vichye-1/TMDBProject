@@ -103,9 +103,13 @@ class RecommendViewController: UIViewController {
         }
         group.enter()
         DispatchQueue.global().async(group: group) {
-            NetworkManager.shared.fetchPoster(api: .poster(id: movieId)) { data in
-                self.relatePosterList = data
-                print("=======3")
+            NetworkManager.shared.fetchPoster(api: .poster(id: movieId)) { success, error in
+                if let success = success {
+                    self.relatePosterList = success
+                    print("=======3")
+                } else {
+                    self.showToastMessage(message: "영화 포스터의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요")
+                }
                 self.recommendTableView.reloadData()
                 group.leave()
             }

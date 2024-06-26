@@ -14,18 +14,16 @@ class NetworkManager {
     private init() { }
     
     typealias recommendHandler = ([RecommendResult]?, AFError?) -> Void
-    typealias posterHandler = ([PosterResult]) -> Void
+    typealias posterHandler = ([PosterResult]?, AFError?) -> Void
     
     func fetchRecommend(api: TMDBAPI, completionHandler: @escaping recommendHandler) {
         print(#function)
         AF.request(api.endpoint, method: api.method, parameters: api.parameter, encoding: URLEncoding(destination: .queryString), headers: api.header).validate(statusCode: 200..<500).responseDecodable(of: Recommendations.self) { response in
             switch response.result {
             case .success(let value):
-                print("similarsuccess")
                 completionHandler(value.results, nil)
             case .failure(let error):
                 completionHandler(nil, error)
-                print(error)
             }
         }
     }
@@ -34,10 +32,9 @@ class NetworkManager {
         AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: Poster.self) { response in
             switch response.result {
             case .success(let value):
-                print("poster success")
-                completionHandler(value.posters)
+                completionHandler(value.posters, nil)
             case .failure(let error):
-                print(error)
+                completionHandler(nil, error)
             }
         }
     }
