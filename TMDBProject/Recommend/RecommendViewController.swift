@@ -139,7 +139,9 @@ extension RecommendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCellIdentifier = RecommendTableViewCell.identifier
         let collectionViewCellIdentifier = RecommendCollectionViewCell.identifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! RecommendTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as? RecommendTableViewCell else {
+            return UITableViewCell()
+        }
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
         cell.collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: collectionViewCellIdentifier)
@@ -173,7 +175,9 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = RecommendCollectionViewCell.identifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! RecommendCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? RecommendCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         var posterPath: String?
         switch collectionView.tag {
         case 0, 1:
@@ -212,9 +216,9 @@ extension RecommendViewController: SkeletonCollectionViewDelegate, SkeletonColle
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch skeletonView.tag {
         case 0, 1:
-            return posterList[skeletonView.tag].count
+            return 5
         case 2:
-            return relatePosterList.count
+            return 5
         default:
             return 0
         }
