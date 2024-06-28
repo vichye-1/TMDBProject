@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 enum TMDBAPI {
+    case trendMovie
     case similar(id: Int)
     case recommend(id: Int)
     case poster(id: Int)
@@ -18,6 +19,8 @@ enum TMDBAPI {
     }
     var endpoint: URL {
         switch self {
+        case .trendMovie:
+            return URL(string: baseURL + "trending/movie/week")!
         case .similar(let id):
             return URL(string: baseURL + "movie/\(id)/similar")!
         case .recommend(let id):
@@ -28,7 +31,7 @@ enum TMDBAPI {
     }
     var parameter: Parameters {
         switch self {
-        case .similar, .recommend:
+        case .trendMovie, .similar, .recommend:
             return [Constant.ParameterKey.language: Constant.ParameterValue.korean]
         case .poster:
             return ["": ""]
