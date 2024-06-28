@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct TrendingMovie: Decodable {
     let results: [MovieResult]
 }
 

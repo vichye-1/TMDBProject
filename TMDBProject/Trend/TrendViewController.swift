@@ -56,7 +56,7 @@ final class TrendViewController: UIViewController {
             "accept": "application/json",
             "Authorization": APIKey.tmdbAccessToken
         ]
-        AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Movie.self)
+        AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: TrendingMovie.self)
         { response in
             switch response.result {
             case .success(let value):

@@ -40,7 +40,7 @@ class NetworkManager {
     }
 //    func fetchTrendMovie(api: TMDBAPI) {
 //        print(#function)
-//        AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: Movie.self) { response in
+//        AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: TrendingMovie.self) { response in
 //            switch response.result {
 //            case .success(let value):
 //                completionHandler(value.posters, nil)

@@ -14,7 +14,7 @@
 		EF79C3392C16D573009E66BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3382C16D573009E66BD /* Base */; };
 		EF79C3412C16DA2B009E66BD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF79C3402C16DA2B009E66BD /* .gitignore */; };
 		EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3422C16E86D009E66BD /* APIKey.swift */; };
-		EF79C3452C16F017009E66BD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3442C16F017009E66BD /* Movie.swift */; };
+		EF79C3452C16F017009E66BD /* TrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3442C16F017009E66BD /* TrendingMovie.swift */; };
 		EF79C3472C16F758009E66BD /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3462C16F758009E66BD /* Credit.swift */; };
 		EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C34F2C1714AE009E66BD /* TrendTableViewCell.swift */; };
 		EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3512C1714E8009E66BD /* ReuseIdentifierProtocol.swift */; };
@@ -53,7 +53,7 @@
 		EF79C33A2C16D573009E66BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF79C3402C16DA2B009E66BD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EF79C3422C16E86D009E66BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		EF79C3442C16F017009E66BD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EF79C3442C16F017009E66BD /* TrendingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovie.swift; sourceTree = "<group>"; };
 		EF79C3462C16F758009E66BD /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 		EF79C34F2C1714AE009E66BD /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		EF79C3512C1714E8009E66BD /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		EF79C34E2C16FBD6009E66BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF79C3442C16F017009E66BD /* Movie.swift */,
+				EF79C3442C16F017009E66BD /* TrendingMovie.swift */,
 				EF79C3462C16F758009E66BD /* Credit.swift */,
 				EF79C3672C184CA2009E66BD /* Search.swift */,
 				EF79C37C2C197D16009E66BD /* Genres.swift */,
@@ -317,7 +317,7 @@
 				EF85CFA42C29D78F00E2C8F9 /* SectionType.swift in Sources */,
 				EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
-				EF79C3452C16F017009E66BD /* Movie.swift in Sources */,
+				EF79C3452C16F017009E66BD /* TrendingMovie.swift in Sources */,
 				EF85CFD02C2AC2C500E2C8F9 /* RecommendCollectionViewCell.swift in Sources */,
 				EFAB7EA62C2F075800A20D10 /* ToastMessage.swift in Sources */,
 				EF85CFD72C2BEA8D00E2C8F9 /* UIView+.swift in Sources */,
