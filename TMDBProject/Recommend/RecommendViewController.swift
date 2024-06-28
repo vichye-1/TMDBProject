@@ -82,7 +82,7 @@ class RecommendViewController: UIViewController {
                 if let success = success {
                     self.posterList[0] = success
                 } else {
-                    self.showToastMessage(message: "비슷한 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
+                    self.showToastMessage(message: ToastMessage.similarMovie.message)
                 }
                 self.recommendTableView.reloadData()
                 group.leave()
@@ -94,7 +94,7 @@ class RecommendViewController: UIViewController {
                 if let success = success {
                     self.posterList[1] = success
                 } else {
-                    self.showToastMessage(message: "추천 영화의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요.")
+                    self.showToastMessage(message: ToastMessage.recommendedMovie.message)
                 }
                 self.recommendTableView.reloadData()
                 group.leave()
@@ -106,7 +106,7 @@ class RecommendViewController: UIViewController {
                 if let success = success {
                     self.relatePosterList = success
                 } else {
-                    self.showToastMessage(message: "영화 포스터의 결과를 불러올 수 없습니다. 잠시후 다시 실행해주세요")
+                    self.showToastMessage(message: ToastMessage.poster.message)
                 }
                 self.recommendTableView.reloadData()
                 group.leave()
