@@ -15,7 +15,7 @@ enum TMDBAPI {
     case poster(id: Int)
     
     var baseURL: String {
-        return "https://api.themoviedb.org/3/"
+        return APIUrl.base.urlString
     }
     var endpoint: URL {
         switch self {
