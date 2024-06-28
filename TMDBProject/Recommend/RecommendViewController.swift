@@ -28,7 +28,6 @@ class RecommendViewController: UIViewController {
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "극한직업"
         label.textAlignment = .left
         label.font = Constant.Font.bold20
         label.textColor = .black
