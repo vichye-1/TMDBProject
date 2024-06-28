@@ -26,7 +26,7 @@ enum TMDBAPI {
         case .recommend(let id):
             return URL(string: baseURL + APIUrl.tmdbRecommend(id: id).urlString)!
         case .poster(let id):
-            return URL(string: baseURL + "movie/\(id)/images")!
+            return URL(string: baseURL + APIUrl.tmdbPoster(id: id).urlString)!
         }
     }
     var parameter: Parameters {
