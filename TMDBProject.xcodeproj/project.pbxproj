@@ -40,6 +40,7 @@
 		EF85CFDC2C2C0F5700E2C8F9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CFDB2C2C0F5700E2C8F9 /* SkeletonView */; };
 		EF85CFDF2C2C144000E2C8F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CFDE2C2C144000E2C8F9 /* Toast */; };
 		EFAB7EA62C2F075800A20D10 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */; };
+		EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		EF85CFD62C2BEA8D00E2C8F9 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 		EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				EF79C37C2C197D16009E66BD /* Genres.swift */,
 				EF85CF912C297B6500E2C8F9 /* Recommendations.swift */,
 				EF85CFA12C29C4CE00E2C8F9 /* Poster.swift */,
+				EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
 				EF79C37D2C197D17009E66BD /* Genres.swift in Sources */,
+				EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */,
 				EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */,
