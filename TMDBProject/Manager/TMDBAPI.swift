@@ -24,7 +24,7 @@ enum TMDBAPI {
         case .similar(let id):
             return URL(string: baseURL + APIUrl.tmdbSimilar(id: id).urlString)!
         case .recommend(let id):
-            return URL(string: baseURL + "movie/\(id)/recommendations")!
+            return URL(string: baseURL + APIUrl.tmdbRecommend(id: id).urlString)!
         case .poster(let id):
             return URL(string: baseURL + "movie/\(id)/images")!
         }
