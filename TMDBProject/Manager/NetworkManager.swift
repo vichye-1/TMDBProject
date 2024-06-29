@@ -13,6 +13,7 @@ class NetworkManager {
     
     private init() { }
     
+    typealias trendingHandler = ([MovieResult]?, AFError?) -> Void
     typealias recommendHandler = ([RecommendResult]?, AFError?) -> Void
     typealias posterHandler = ([PosterResult]?, AFError?) -> Void
     
@@ -38,39 +39,15 @@ class NetworkManager {
             }
         }
     }
-//    func fetchTrendMovie(api: TMDBAPI) {
-//        print(#function)
-//        AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: TrendingMovie.self) { response in
-//            switch response.result {
-//            case .success(let value):
-//                completionHandler(value.posters, nil)
-//            case .failure(let error):
-//                completionHandler(nil, error)
-//            }
-//        }
-//    }
-    
-    /*
-     private func callRequestMovie() {
-         let url = APIUrl.tmdbmovie.urlString
-         let parameters: Parameters = [
-             "language": "ko-KR"
-         ]
-         let header: HTTPHeaders = [
-             "accept": "application/json",
-             "Authorization": APIKey.tmdbAccessToken
-         ]
-         AF.request(url, method: .get, parameters: parameters, headers: header).responseDecodable(of: Movie.self)
-         { response in
-             switch response.result {
-             case .success(let value):
-                 self.movies = value.results
-                 self.movieTableView.reloadData()
-                 self.loadMovieId()
-             case .failure(let error):
-                 print("movie \(error)")
-             }
-         }
-     }
-     */
+    func fetchTrendMovie(api: TMDBAPI, completionHandler: @escaping trendingHandler) {
+        print(#function)
+        AF.request(api.endpoint, method: api.method, headers: api.header).responseDecodable(of: TrendingMovie.self) { response in
+            switch response.result {
+            case .success(let value):
+                completionHandler(value.results, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
 }

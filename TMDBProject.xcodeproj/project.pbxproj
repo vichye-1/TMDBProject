@@ -41,6 +41,7 @@
 		EF85CFDF2C2C144000E2C8F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = EF85CFDE2C2C144000E2C8F9 /* Toast */; };
 		EFAB7EA62C2F075800A20D10 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */; };
 		EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */; };
+		EFAB7EAB2C2FA6F400A20D10 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		EF85CFD82C2BEFFC00E2C8F9 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 		EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EFAB7EA92C2FA5B500A20D10 /* Credit */,
 				EF85CFA02C29B7DF00E2C8F9 /* Recommend */,
 				EF85CF9C2C29B31700E2C8F9 /* Manager */,
 				EF79C3792C197298009E66BD /* Constant */,
@@ -210,6 +213,14 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
+		EFAB7EA92C2FA5B500A20D10 /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+				EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */,
+			);
+			path = Credit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,6 +311,7 @@
 				EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */,
+				EFAB7EAB2C2FA6F400A20D10 /* CreditViewController.swift in Sources */,
 				EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */,
 				EF85CF922C297B6600E2C8F9 /* Recommendations.swift in Sources */,
 				EF79C37B2C1972AF009E66BD /* Constant.swift in Sources */,

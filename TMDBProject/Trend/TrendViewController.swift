@@ -134,7 +134,6 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = TrendTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
@@ -142,5 +141,9 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let cast = casts[movie.id] ?? []
         cell.configureCell(movie, cast, genres)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let creditVC = CreditViewController()
+        navigationController?.pushViewController(creditVC, animated: true)
     }
 }
