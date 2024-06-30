@@ -15,14 +15,10 @@ class BaseViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureView()
+        configureTableView()
     }
-    func configureHierarchy() {
-        
-    }
-    func configureLayout() {
-        
-    }
-    func configureView() {
-        
-    }
+    func configureHierarchy() { }
+    func configureLayout() { }
+    func configureView() { }
+    func configureTableView() { }
 }

@@ -10,6 +10,8 @@ import SnapKit
 
 class CreditViewController: BaseViewController {
     
+    let castIdentifier = CastTableViewCell.identifier
+    
     private let posterImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .brown
@@ -58,4 +60,22 @@ class CreditViewController: BaseViewController {
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    override func configureTableView() {
+        castTableView.delegate = self
+        castTableView.dataSource = self
+        castTableView.register(CastTableViewCell.self, forCellReuseIdentifier: castIdentifier)
+    }
+}
+
+extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: castIdentifier, for: indexPath) as! CastTableViewCell
+        return cell
+    }
+    
+    
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EF41E4C32C31B1D400FEE522 /* CreditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C22C31B1D400FEE522 /* CreditType.swift */; };
+		EF41E4C52C31B66F00FEE522 /* OverViewCreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */; };
+		EF41E4C72C31B91D00FEE522 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */; };
+		EF41E4C92C31BB4C00FEE522 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */; };
 		EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32C2C16D571009E66BD /* AppDelegate.swift */; };
 		EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32E2C16D571009E66BD /* SceneDelegate.swift */; };
 		EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3302C16D571009E66BD /* TrendViewController.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		EF41E4C22C31B1D400FEE522 /* CreditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditType.swift; sourceTree = "<group>"; };
+		EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewCreditTableViewCell.swift; sourceTree = "<group>"; };
+		EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		EF79C3292C16D571009E66BD /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF79C32C2C16D571009E66BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF79C32E2C16D571009E66BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,15 +125,15 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EF79C3762C1971C4009E66BD /* CustomView */,
 				EFAB7EAC2C2FA84200A20D10 /* Base */,
 				EFAB7EA92C2FA5B500A20D10 /* Credit */,
-				EF85CFA02C29B7DF00E2C8F9 /* Recommend */,
-				EF85CF9C2C29B31700E2C8F9 /* Manager */,
-				EF79C3792C197298009E66BD /* Constant */,
-				EF79C3762C1971C4009E66BD /* CustomView */,
-				EF79C3642C184A7D009E66BD /* Search */,
 				EF79C3632C184A40009E66BD /* Trend */,
+				EF79C3642C184A7D009E66BD /* Search */,
+				EF85CFA02C29B7DF00E2C8F9 /* Recommend */,
+				EF79C3792C197298009E66BD /* Constant */,
 				EF79C3532C1716CA009E66BD /* Extensions */,
+				EF85CF9C2C29B31700E2C8F9 /* Manager */,
 				EF79C34E2C16FBD6009E66BD /* Model */,
 				EF79C32C2C16D571009E66BD /* AppDelegate.swift */,
 				EF79C32E2C16D571009E66BD /* SceneDelegate.swift */,
@@ -223,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */,
+				EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */,
+				EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */,
 			);
 			path = Credit;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */,
+				EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -320,8 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF41E4C92C31BB4C00FEE522 /* CastTableViewCell.swift in Sources */,
 				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
 				EF79C37D2C197D17009E66BD /* Genres.swift in Sources */,
+				EF41E4C52C31B66F00FEE522 /* OverViewCreditTableViewCell.swift in Sources */,
 				EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */,
@@ -339,6 +350,7 @@
 				EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */,
 				EF85CF8B2C29701900E2C8F9 /* RecommendViewController.swift in Sources */,
 				EF79C3432C16E86D009E66BD /* APIKey.swift in Sources */,
+				EF41E4C72C31B91D00FEE522 /* BaseTableViewCell.swift in Sources */,
 				EF79C36A2C185C53009E66BD /* SearchCollectionViewCell.swift in Sources */,
 				EF79C3682C184CA2009E66BD /* Search.swift in Sources */,
 				EF85CFD92C2BEFFC00E2C8F9 /* TMDBAPI.swift in Sources */,
