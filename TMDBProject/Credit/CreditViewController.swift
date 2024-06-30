@@ -122,5 +122,15 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let eachSection = CreditType.allCases[indexPath.section]
+        switch eachSection {
+        case .overview:
+            return 150
+        case .cast:
+            return 80
+        }
+    }
+    
     
 }
