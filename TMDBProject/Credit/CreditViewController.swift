@@ -14,10 +14,12 @@ class CreditViewController: BaseViewController {
     let castIdentifier = CastTableViewCell.identifier
     
     var selectedMovie: MovieResult?
+    var selectedPoster: [Cast]?
     
     private let posterImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .brown
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -67,6 +69,15 @@ class CreditViewController: BaseViewController {
     override func configureView() {
         guard let selectedMovie = selectedMovie else { return }
         movieTitleLabel.text = selectedMovie.title
+        
+        guard let posterPath = selectedMovie.poster_path else {
+            posterImageView.image = UIImage(systemName: "timer")
+            return
+        }
+        
+        let posterUrl = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
+        posterImageView.kf.setImage(with: posterUrl)
+        castTableView.reloadData()
     }
     
     override func configureTableView() {
