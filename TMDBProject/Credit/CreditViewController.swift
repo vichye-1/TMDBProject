@@ -23,6 +23,13 @@ class CreditViewController: BaseViewController {
         return imageView
     }()
     
+    private let posterBackgroundImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .black
+        imageView.alpha = 0.4
+        return imageView
+    }()
+    
     private let movieTitleLabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -42,7 +49,7 @@ class CreditViewController: BaseViewController {
     }
     
     override func configureHierarchy() {
-        [posterImageView, movieTitleLabel, castTableView].forEach {
+        [posterImageView, posterBackgroundImageView, movieTitleLabel, castTableView].forEach {
             view.addSubview($0)
         }
     }
@@ -52,6 +59,10 @@ class CreditViewController: BaseViewController {
         posterImageView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.25)
+        }
+        
+        posterBackgroundImageView.snp.makeConstraints { make in
+            make.edges.equalTo(posterImageView)
         }
         
         movieTitleLabel.snp.makeConstraints { make in
