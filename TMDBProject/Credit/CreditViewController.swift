@@ -68,8 +68,23 @@ class CreditViewController: BaseViewController {
 }
 
 extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return CreditType.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let creditType = CreditType.allCases[section]
+        return creditType.title
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        let creditType = CreditType.allCases[section]
+        switch creditType {
+        case .overview:
+            return 1
+        case .cast:
+            return 8
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
