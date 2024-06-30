@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 import SnapKit
 
 class CreditViewController: BaseViewController {
     
     let castIdentifier = CastTableViewCell.identifier
+    
+    var selectedMovie: MovieResult?
     
     private let posterImageView = {
         let imageView = UIImageView()
@@ -21,9 +24,8 @@ class CreditViewController: BaseViewController {
     private let movieTitleLabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = Constant.Font.bold17
+        label.font = Constant.Font.bold20
         label.textColor = .white
-        label.backgroundColor = .systemCyan
         return label
     }()
     
@@ -42,6 +44,7 @@ class CreditViewController: BaseViewController {
             view.addSubview($0)
         }
     }
+    
     override func configureLayout() {
         
         posterImageView.snp.makeConstraints { make in
@@ -60,6 +63,12 @@ class CreditViewController: BaseViewController {
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    override func configureView() {
+        guard let selectedMovie = selectedMovie else { return }
+        movieTitleLabel.text = selectedMovie.title
+    }
+    
     override func configureTableView() {
         castTableView.delegate = self
         castTableView.dataSource = self

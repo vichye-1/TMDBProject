@@ -12,6 +12,7 @@ import SnapKit
 final class TrendViewController: UIViewController {
     
     let movieTableView = UITableView()
+    
     var movies: [MovieResult] = []
     var casts: [Int: [Cast]] = [:]
     var genres: [Int: String] = [:]
@@ -134,6 +135,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = TrendTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TrendTableViewCell
@@ -142,8 +144,11 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(movie, cast, genres)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let creditVC = CreditViewController()
+        let selectedMovie = movies[indexPath.row]
+        creditVC.selectedMovie = selectedMovie
         navigationController?.pushViewController(creditVC, animated: true)
     }
 }
