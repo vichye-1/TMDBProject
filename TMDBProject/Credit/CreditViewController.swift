@@ -14,7 +14,7 @@ class CreditViewController: BaseViewController {
     let castIdentifier = CastTableViewCell.identifier
     
     var selectedMovie: MovieResult?
-    var selectedPoster: [Cast]?
+    var casts: [Cast]?
     
     private let posterImageView = {
         let imageView = UIImageView()
@@ -40,7 +40,6 @@ class CreditViewController: BaseViewController {
     
     private let castTableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .systemTeal
         return tableView
     }()
     
