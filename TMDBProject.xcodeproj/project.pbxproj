@@ -42,6 +42,7 @@
 		EFAB7EA62C2F075800A20D10 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */; };
 		EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */; };
 		EFAB7EAB2C2FA6F400A20D10 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */; };
+		EFAB7EAE2C2FA86900A20D10 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		EF79C32B2C16D571009E66BD /* TMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				EFAB7EAC2C2FA84200A20D10 /* Base */,
 				EFAB7EA92C2FA5B500A20D10 /* Credit */,
 				EF85CFA02C29B7DF00E2C8F9 /* Recommend */,
 				EF85CF9C2C29B31700E2C8F9 /* Manager */,
@@ -221,6 +224,14 @@
 			path = Credit;
 			sourceTree = "<group>";
 		};
+		EFAB7EAC2C2FA84200A20D10 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +322,7 @@
 				EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */,
+				EFAB7EAE2C2FA86900A20D10 /* BaseViewController.swift in Sources */,
 				EFAB7EAB2C2FA6F400A20D10 /* CreditViewController.swift in Sources */,
 				EF79C3782C19722E009E66BD /* TrendDateLabel.swift in Sources */,
 				EF85CF922C297B6600E2C8F9 /* Recommendations.swift in Sources */,

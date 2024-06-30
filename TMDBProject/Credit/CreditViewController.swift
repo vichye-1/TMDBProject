@@ -7,12 +7,11 @@
 
 import UIKit
 
-class CreditViewController: UIViewController {
-
+class CreditViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
     }
     
-
+    
 }
