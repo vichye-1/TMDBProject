@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF41E4C32C31B1D400FEE522 /* CreditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C22C31B1D400FEE522 /* CreditType.swift */; };
 		EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32C2C16D571009E66BD /* AppDelegate.swift */; };
 		EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32E2C16D571009E66BD /* SceneDelegate.swift */; };
 		EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C3302C16D571009E66BD /* TrendViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF41E4C22C31B1D400FEE522 /* CreditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditType.swift; sourceTree = "<group>"; };
 		EF79C3292C16D571009E66BD /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF79C32C2C16D571009E66BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF79C32E2C16D571009E66BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				EF79C37A2C1972AF009E66BD /* Constant.swift */,
 				EF85CFA32C29D78F00E2C8F9 /* SectionType.swift */,
 				EFAB7EA52C2F075800A20D10 /* ToastMessage.swift */,
+				EF41E4C22C31B1D400FEE522 /* CreditType.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				EF79C3522C1714E8009E66BD /* ReuseIdentifierProtocol.swift in Sources */,
 				EF79C3312C16D571009E66BD /* TrendViewController.swift in Sources */,
 				EF85CFA22C29C4CE00E2C8F9 /* Poster.swift in Sources */,
+				EF41E4C32C31B1D400FEE522 /* CreditType.swift in Sources */,
 				EF79C3502C1714AE009E66BD /* TrendTableViewCell.swift in Sources */,
 				EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */,
 				EF79C3552C1716E2009E66BD /* UIViewController+.swift in Sources */,
