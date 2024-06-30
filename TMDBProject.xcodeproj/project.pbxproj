@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF41E4C32C31B1D400FEE522 /* CreditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C22C31B1D400FEE522 /* CreditType.swift */; };
-		EF41E4C52C31B66F00FEE522 /* OverViewCreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */; };
+		EF41E4C52C31B66F00FEE522 /* OverViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C42C31B66F00FEE522 /* OverViewTableViewCell.swift */; };
 		EF41E4C72C31B91D00FEE522 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */; };
 		EF41E4C92C31BB4C00FEE522 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */; };
 		EF79C32D2C16D571009E66BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF79C32C2C16D571009E66BD /* AppDelegate.swift */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		EF41E4C22C31B1D400FEE522 /* CreditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditType.swift; sourceTree = "<group>"; };
-		EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewCreditTableViewCell.swift; sourceTree = "<group>"; };
+		EF41E4C42C31B66F00FEE522 /* OverViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewTableViewCell.swift; sourceTree = "<group>"; };
 		EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		EF79C3292C16D571009E66BD /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */,
-				EF41E4C42C31B66F00FEE522 /* OverViewCreditTableViewCell.swift */,
+				EF41E4C42C31B66F00FEE522 /* OverViewTableViewCell.swift */,
 				EF41E4C82C31BB4C00FEE522 /* CastTableViewCell.swift */,
 			);
 			path = Credit;
@@ -332,7 +332,7 @@
 				EF41E4C92C31BB4C00FEE522 /* CastTableViewCell.swift in Sources */,
 				EF79C3472C16F758009E66BD /* Credit.swift in Sources */,
 				EF79C37D2C197D17009E66BD /* Genres.swift in Sources */,
-				EF41E4C52C31B66F00FEE522 /* OverViewCreditTableViewCell.swift in Sources */,
+				EF41E4C52C31B66F00FEE522 /* OverViewTableViewCell.swift in Sources */,
 				EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */,
 				EF79C3662C184A96009E66BD /* SearchCollectionViewController.swift in Sources */,
 				EF85CF9E2C29B33000E2C8F9 /* NetworkManager.swift in Sources */,

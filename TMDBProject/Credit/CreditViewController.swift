@@ -11,6 +11,7 @@ import SnapKit
 
 class CreditViewController: BaseViewController {
     
+    let overviewIdentifier = OverViewTableViewCell.identifier
     let castIdentifier = CastTableViewCell.identifier
     
     var selectedMovie: MovieResult?
@@ -94,6 +95,7 @@ class CreditViewController: BaseViewController {
         castTableView.delegate = self
         castTableView.dataSource = self
         castTableView.register(CastTableViewCell.self, forCellReuseIdentifier: castIdentifier)
+        castTableView.register(OverViewTableViewCell.self, forCellReuseIdentifier: overviewIdentifier)
     }
 }
 
@@ -118,8 +120,15 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: castIdentifier, for: indexPath) as! CastTableViewCell
-        return cell
+        let section = CreditType.allCases[indexPath.section]
+        switch section {
+        case .overview:
+            let cell = tableView.dequeueReusableCell(withIdentifier: overviewIdentifier, for: indexPath) as! OverViewTableViewCell
+            return cell
+        case .cast:
+            let cell = tableView.dequeueReusableCell(withIdentifier: castIdentifier, for: indexPath) as! CastTableViewCell
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
