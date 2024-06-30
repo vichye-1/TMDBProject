@@ -25,24 +25,37 @@ class CreditViewController: BaseViewController {
         return label
     }()
     
+    private let castTableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .systemTeal
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func configureHierarchy() {
-        [posterImageView, movieTitleLabel].forEach {
+        [posterImageView, movieTitleLabel, castTableView].forEach {
             view.addSubview($0)
         }
     }
     override func configureLayout() {
+        
         posterImageView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.25)
         }
+        
         movieTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(34)
+        }
+        
+        castTableView.snp.makeConstraints { make in
+            make.top.equalTo(posterImageView.snp.bottom)
+            make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
