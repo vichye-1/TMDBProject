@@ -129,6 +129,13 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .cast:
             let cell = tableView.dequeueReusableCell(withIdentifier: castIdentifier, for: indexPath) as! CastTableViewCell
+            if let casts = casts {
+                let cast = casts[indexPath.row]
+                let actorPosterUrl = URL(string: "https://image.tmdb.org/t/p/w500\(cast.profile_path ?? "")")
+                cell.actorImageView.kf.setImage(with: actorPosterUrl, placeholder: UIImage(systemName: "person.fill"))
+                cell.actorNameLabel.text = cast.name
+                cell.characterLabel.text = cast.character
+            }
             return cell
         }
     }
