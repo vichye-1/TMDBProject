@@ -26,7 +26,7 @@ class OverViewTableViewCell: BaseTableViewCell {
     override func configureLayout() {
         overviewTextView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(contentView).inset(20)
-            make.height.equalTo(80)
+            make.bottom.equalTo(contentView).inset(20)
         }
     }
 }

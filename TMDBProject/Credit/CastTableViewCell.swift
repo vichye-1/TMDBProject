@@ -25,7 +25,7 @@ class CastTableViewCell: BaseTableViewCell {
         actorImageView.snp.makeConstraints { make in
             make.verticalEdges.equalTo(contentView).inset(8)
             make.leading.equalTo(contentView).offset(16)
-            make.width.equalTo(actorImageView.snp.height).multipliedBy(0.5)
+            make.width.equalTo(actorImageView.snp.height).multipliedBy(0.75)
         }
     }
 }
