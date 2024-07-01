@@ -31,6 +31,10 @@ class RecommendCollectionViewCell: BaseCollectionViewCell {
 
     }
     
+//    func callRequestPoster() {
+//        let request = URLRequest(url: )
+//    }
+    
     override func configureHierarchy() {
         [posterView, progressLabel].forEach {
             contentView.addSubview($0)
@@ -45,5 +49,21 @@ class RecommendCollectionViewCell: BaseCollectionViewCell {
         progressLabel.snp.makeConstraints { make in
             make.edges.equalTo(posterView)
         }
+    }
+}
+
+extension RecommendCollectionViewCell: URLSessionDataDelegate {
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse) async -> URLSession.ResponseDisposition {
+        print(#function, response)
+        return .allow
+    }
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        print(#function, data)
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: (any Error)?) {
+        print(#function, error)
     }
 }
