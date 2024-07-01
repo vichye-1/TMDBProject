@@ -16,10 +16,14 @@ class CastTableViewCell: BaseTableViewCell {
     }()
     
     let actorNameLabel = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .systemGreen
-        return imageView
+        let label = UILabel()
+        label.backgroundColor = .systemGreen
+        return label
     }()
+    
+//    let characterLabel = {
+//        let
+//    }
     
     override func configureHierarchy() {
         [actorImageView, actorNameLabel].forEach {

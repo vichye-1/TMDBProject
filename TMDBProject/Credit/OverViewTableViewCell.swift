@@ -9,22 +9,22 @@ import UIKit
 import SnapKit
 
 class OverViewTableViewCell: BaseTableViewCell {
-    private let overviewTextView = {
-        let textview = UITextView()
-        textview.backgroundColor = .systemYellow
-        textview.textColor = .black
-        textview.font = Constant.Font.font13
-        return textview
+    private let overviewLabel = {
+        let label = UILabel()
+        label.backgroundColor = .systemYellow
+        label.textColor = .black
+        label.font = Constant.Font.font13
+        return label
     }()
     
     override func configureHierarchy() {
-        [overviewTextView].forEach {
+        [overviewLabel].forEach {
             contentView.addSubview($0)
         }
     }
     
     override func configureLayout() {
-        overviewTextView.snp.makeConstraints { make in
+        overviewLabel.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(contentView).inset(20)
             make.bottom.equalTo(contentView).inset(20)
         }
