@@ -16,6 +16,7 @@ final class TrendViewController: UIViewController {
     var movies: [MovieResult] = []
     var casts: [Int: [Cast]] = [:]
     var genres: [Int: String] = [:]
+    var overview = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +151,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedMovie = movies[indexPath.row]
         creditVC.selectedMovie = selectedMovie
         creditVC.casts = casts[selectedMovie.id]
+        creditVC.overview = selectedMovie.overview
         navigationController?.pushViewController(creditVC, animated: true)
     }
 }

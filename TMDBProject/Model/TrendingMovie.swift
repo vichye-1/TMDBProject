@@ -13,6 +13,7 @@ struct TrendingMovie: Decodable {
 
 struct MovieResult: Decodable {
     let id: Int
+    let overview: String
     let poster_path: String?
     let title: String
     let genre_ids: [Int]

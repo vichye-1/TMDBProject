@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 
 class OverViewTableViewCell: BaseTableViewCell {
-    private let overviewLabel = {
+    let overviewLabel = {
         let label = UILabel()
-        label.backgroundColor = .systemYellow
         label.textColor = .black
         label.font = Constant.Font.font13
+        label.numberOfLines = 0
         return label
     }()
     

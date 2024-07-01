@@ -16,6 +16,7 @@ class CreditViewController: BaseViewController {
     
     var selectedMovie: MovieResult?
     var casts: [Cast]?
+    var overview = ""
     
     private let posterImageView = {
         let imageView = UIImageView()
@@ -124,6 +125,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case .overview:
             let cell = tableView.dequeueReusableCell(withIdentifier: overviewIdentifier, for: indexPath) as! OverViewTableViewCell
+            cell.overviewLabel.text = overview
             return cell
         case .cast:
             let cell = tableView.dequeueReusableCell(withIdentifier: castIdentifier, for: indexPath) as! CastTableViewCell
