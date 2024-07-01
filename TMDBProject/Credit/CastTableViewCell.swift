@@ -15,8 +15,14 @@ class CastTableViewCell: BaseTableViewCell {
         return imageView
     }()
     
+    let actorNameLabel = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .systemGreen
+        return imageView
+    }()
+    
     override func configureHierarchy() {
-        [actorImageView].forEach {
+        [actorImageView, actorNameLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -26,6 +32,13 @@ class CastTableViewCell: BaseTableViewCell {
             make.verticalEdges.equalTo(contentView).inset(8)
             make.leading.equalTo(contentView).offset(16)
             make.width.equalTo(actorImageView.snp.height).multipliedBy(0.75)
+        }
+        
+        actorNameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(actorImageView.snp.trailing).offset(20)
+            make.trailing.equalTo(contentView).inset(20)
+            make.centerY.equalTo(contentView).offset(-10)
+            make.height.equalTo(24)
         }
     }
 }
