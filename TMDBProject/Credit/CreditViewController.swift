@@ -116,7 +116,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
         case .overview:
             return 1
         case .cast:
-            return 8
+            return casts?.count ?? 0
         }
     }
     
