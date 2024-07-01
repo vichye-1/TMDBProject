@@ -18,15 +18,23 @@ class CastTableViewCell: BaseTableViewCell {
     let actorNameLabel = {
         let label = UILabel()
         label.backgroundColor = .systemGreen
+        label.textColor = .black
+        label.font = Constant.Font.bold15
+        label.textAlignment = .left
         return label
     }()
     
-//    let characterLabel = {
-//        let
-//    }
+    let characterLabel = {
+        let label = UILabel()
+        label.backgroundColor = .systemBlue
+        label.textColor = .gray
+        label.font = Constant.Font.font13
+        label.textAlignment = .left
+        return label
+    }()
     
     override func configureHierarchy() {
-        [actorImageView, actorNameLabel].forEach {
+        [actorImageView, actorNameLabel, characterLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -42,6 +50,13 @@ class CastTableViewCell: BaseTableViewCell {
             make.leading.equalTo(actorImageView.snp.trailing).offset(20)
             make.trailing.equalTo(contentView).inset(20)
             make.centerY.equalTo(contentView).offset(-10)
+            make.height.equalTo(24)
+        }
+        
+        characterLabel.snp.makeConstraints { make in
+            make.leading.equalTo(actorImageView.snp.trailing).offset(20)
+            make.trailing.equalTo(contentView).inset(20)
+            make.centerY.equalTo(contentView).offset(10)
             make.height.equalTo(24)
         }
     }
