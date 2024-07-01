@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class CastTableViewCell: BaseTableViewCell {
-    let imageShadowView = {
+    private let imageShadowView = {
         let view = UIView()
         view.layer.shadowOffset = CGSize(width: 5, height: 5)
         view.layer.shadowOpacity = 0.7
