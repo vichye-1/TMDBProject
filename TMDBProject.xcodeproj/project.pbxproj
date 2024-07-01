@@ -47,6 +47,7 @@
 		EFAB7EA82C2F0AC400A20D10 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */; };
 		EFAB7EAB2C2FA6F400A20D10 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */; };
 		EFAB7EAE2C2FA86900A20D10 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */; };
+		EFAC58072C331204005975DD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58062C331204005975DD /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		EFAB7EA72C2F0AC400A20D10 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		EFAB7EAA2C2FA6F400A20D10 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EFAC58062C331204005975DD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			children = (
 				EFAB7EAD2C2FA86900A20D10 /* BaseViewController.swift */,
 				EF41E4C62C31B91D00FEE522 /* BaseTableViewCell.swift */,
+				EFAC58062C331204005975DD /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				EF79C3682C184CA2009E66BD /* Search.swift in Sources */,
 				EF85CFD92C2BEFFC00E2C8F9 /* TMDBAPI.swift in Sources */,
 				EF85CFA42C29D78F00E2C8F9 /* SectionType.swift in Sources */,
+				EFAC58072C331204005975DD /* BaseCollectionViewCell.swift in Sources */,
 				EF85CFA62C29DA1500E2C8F9 /* RecommendTableViewCell.swift in Sources */,
 				EF79C32F2C16D571009E66BD /* SceneDelegate.swift in Sources */,
 				EF79C3452C16F017009E66BD /* TrendingMovie.swift in Sources */,
